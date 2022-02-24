@@ -1,10 +1,10 @@
 package Operator;
 
-import main.java.ExtinguishDevices.HeadCannon;
-import main.java.FLF.PositionType;
-import main.java.Joystick.JoyStickFeeler;
-import main.java.Joystick.Joystick;
-import main.java.Joystick.PressureButton;
+import ExtinguishDevices.HeadCannon;
+import FLF.PositionType;
+import Joystick.JoyStickFeeler;
+import Joystick.Joystick;
+import Joystick.PressureButton;
 
 public class JoystickHeadCanon extends Joystick {
     

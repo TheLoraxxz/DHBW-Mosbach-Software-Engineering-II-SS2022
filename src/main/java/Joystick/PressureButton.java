@@ -1,10 +1,10 @@
 package Joystick;
 
-import main.java.ExtinguishDevices.Cannon;
-import main.java.ExtinguishDevices.CannonState;
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.ExtinguishDevices.HeadCannon;
-import main.java.FLF.PositionType;
+import ExtinguishDevices.Cannon;
+import ExtinguishDevices.CannonState;
+import ExtinguishDevices.FrontCannon;
+import ExtinguishDevices.HeadCannon;
+import FLF.PositionType;
 
 public class PressureButton implements IFeeler {
 

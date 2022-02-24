@@ -1,6 +1,6 @@
 package Lights;
 
-import main.java.FLF.PositionType;
+import FLF.PositionType;
 
 public class WarningLight extends Lights{
     private LED[] led;

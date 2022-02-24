@@ -1,7 +1,7 @@
 package Joystick;
 
-import main.java.ExtinguishDevices.Cannon;
-import main.java.ExtinguishDevices.CannonState;
+import ExtinguishDevices.Cannon;
+import ExtinguishDevices.CannonState;
 
 public class JoyStickFeeler implements IFeeler{
 

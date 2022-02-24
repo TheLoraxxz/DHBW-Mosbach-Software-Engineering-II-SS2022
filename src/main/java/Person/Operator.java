@@ -1,9 +1,9 @@
 package Person;
 
-import main.java.ExtinguishDevices.FrontWaterStepsType;
-import main.java.ExtinguishDevices.KnopRoofStepsType;
-import main.java.Operator.OperatorSection;
-import main.java.Operator.SwitchType;
+import ExtinguishDevices.FrontWaterStepsType;
+import ExtinguishDevices.KnopRoofStepsType;
+import Operator.OperatorSection;
+import Operator.SwitchType;
 
 public class Operator extends FLFOperator {
     public Operator() {

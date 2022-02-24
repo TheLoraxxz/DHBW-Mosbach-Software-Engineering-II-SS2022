@@ -1,6 +1,6 @@
 package Lights;
 
-import main.java.FLF.PositionType;
+import FLF.PositionType;
 
 public class HeadLight extends Lights{
 

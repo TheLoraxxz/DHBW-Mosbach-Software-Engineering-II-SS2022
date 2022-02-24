@@ -1,7 +1,7 @@
 package Joystick;
 
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.ExtinguishDevices.HeadCannon;
+import ExtinguishDevices.FrontCannon;
+import ExtinguishDevices.HeadCannon;
 
 public class GeneralJoystickFeeler extends JoyStickFeeler {
     JoystickStateClass state;

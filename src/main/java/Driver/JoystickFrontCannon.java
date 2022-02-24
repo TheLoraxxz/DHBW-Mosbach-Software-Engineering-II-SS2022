@@ -1,10 +1,10 @@
 package Driver;
 
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.FLF.PositionType;
-import main.java.Joystick.JoyStickFeeler;
-import main.java.Joystick.Joystick;
-import main.java.Joystick.PressureButton;
+import ExtinguishDevices.FrontCannon;
+import FLF.PositionType;
+import Joystick.JoyStickFeeler;
+import Joystick.Joystick;
+import Joystick.PressureButton;
 
 public class JoystickFrontCannon extends Joystick{
 

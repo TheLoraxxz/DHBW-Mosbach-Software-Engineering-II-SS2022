@@ -1,10 +1,10 @@
 package Operator;
 
-import main.java.Engine.ElectricMotor;
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.ExtinguishDevices.GroundSprayNozzles;
-import main.java.ExtinguishDevices.HeadCannon;
-import main.java.Lights.Lights;
+import Engine.ElectricMotor;
+import ExtinguishDevices.FrontCannon;
+import ExtinguishDevices.GroundSprayNozzles;
+import ExtinguishDevices.HeadCannon;
+import Lights.Lights;
 
 import java.util.HashMap;
 

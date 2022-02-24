@@ -1,14 +1,14 @@
 package Driver;
 
-import main.java.Engine.ElectricMotor;
-import main.java.Engine.PivotTurnable;
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.FLF.PositionType;
-import main.java.Joystick.GeneralJoystick;
-import main.java.Joystick.Joystick;
-import main.java.Lights.BreakLight;
-import main.java.Lights.TurnSignalLight;
-import main.java.Person.Driver;
+import Engine.ElectricMotor;
+import Engine.PivotTurnable;
+import ExtinguishDevices.FrontCannon;
+import FLF.PositionType;
+import Joystick.GeneralJoystick;
+import Joystick.Joystick;
+import Lights.BreakLight;
+import Lights.TurnSignalLight;
+import Person.Driver;
 
 public class DriverSection {
     private Driver driver;

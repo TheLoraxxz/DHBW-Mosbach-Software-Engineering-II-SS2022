@@ -1,6 +1,6 @@
 package Cabine;
 
-import main.java.Person.Person;
+import Person.Person;
 
 public class DoorFeeler implements IDoorFeeler{
     private BusDoor busDoor;

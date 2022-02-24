@@ -1,7 +1,7 @@
 package Driver;
 
-import main.java.Engine.ElectricMotor;
-import main.java.Engine.Pivot;
+import Engine.ElectricMotor;
+import Engine.Pivot;
 
 public class GasPedal implements IPedal{
 

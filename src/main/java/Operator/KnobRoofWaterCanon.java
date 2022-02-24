@@ -1,7 +1,7 @@
 package Operator;
 
-import main.java.ExtinguishDevices.HeadCannon;
-import main.java.ExtinguishDevices.KnopRoofStepsType;
+import ExtinguishDevices.HeadCannon;
+import ExtinguishDevices.KnopRoofStepsType;
 
 public class KnobRoofWaterCanon {
 

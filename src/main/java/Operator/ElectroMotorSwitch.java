@@ -1,6 +1,6 @@
 package Operator;
 
-import main.java.Engine.ElectricMotor;
+import Engine.ElectricMotor;
 
 public class ElectroMotorSwitch extends Switch{
     private ElectricMotor[] motor;

@@ -1,6 +1,6 @@
 package FLF;
 
-import main.java.Cabine.Cabin;
+import Cabine.Cabin;
 
 public class FLF {
 

@@ -1,8 +1,8 @@
 package Joystick;
 
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.ExtinguishDevices.HeadCannon;
-import main.java.FLF.PositionType;
+import ExtinguishDevices.FrontCannon;
+import ExtinguishDevices.HeadCannon;
+import FLF.PositionType;
 
 public class GeneralPressureButton extends PressureButton implements ISpecialFeeler {
     private FrontCannon front;

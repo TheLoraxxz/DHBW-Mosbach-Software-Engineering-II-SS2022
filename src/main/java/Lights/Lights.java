@@ -1,6 +1,6 @@
 package Lights;
 
-import main.java.FLF.PositionType;
+import FLF.PositionType;
 
 public abstract class Lights {
     protected PositionType position;

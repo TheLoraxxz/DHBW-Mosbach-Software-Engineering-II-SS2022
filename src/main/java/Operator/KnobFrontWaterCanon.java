@@ -1,7 +1,7 @@
 package Operator;
 
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.ExtinguishDevices.FrontWaterStepsType;
+import ExtinguishDevices.FrontCannon;
+import ExtinguishDevices.FrontWaterStepsType;
 
 public class KnobFrontWaterCanon{
 

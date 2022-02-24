@@ -1,8 +1,8 @@
 package Cabine;
 
-import main.java.FLF.CentralUnit;
-import main.java.FLF.PositionType;
-import main.java.Person.FLFOperator;
+import FLF.CentralUnit;
+import FLF.PositionType;
+import Person.FLFOperator;
 
 public class BusDoor {
     private boolean isOpen,isUnlocked;

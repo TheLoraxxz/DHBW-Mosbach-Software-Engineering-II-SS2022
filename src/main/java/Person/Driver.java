@@ -1,6 +1,6 @@
 package Person;
 
-import main.java.Driver.DriverSection;
+import Driver.DriverSection;
 
 public class Driver extends FLFOperator{
     public Driver() {

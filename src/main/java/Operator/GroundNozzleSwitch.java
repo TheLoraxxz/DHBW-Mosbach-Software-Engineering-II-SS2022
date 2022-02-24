@@ -1,7 +1,7 @@
 package Operator;
 
-import main.java.ExtinguishDevices.CannonState;
-import main.java.ExtinguishDevices.GroundSprayNozzles;
+import ExtinguishDevices.CannonState;
+import ExtinguishDevices.GroundSprayNozzles;
 
 public class GroundNozzleSwitch extends Switch  {
     private GroundSprayNozzles[] sprayNozzles;

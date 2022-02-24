@@ -1,12 +1,12 @@
 package Cabine;
 
 
-import main.java.Driver.DriverSection;
-import main.java.FLF.PositionType;
-import main.java.Operator.OperatorSection;
-import main.java.Person.Driver;
-import main.java.Person.Operator;
-import main.java.Person.Person;
+import Driver.DriverSection;
+import FLF.PositionType;
+import Operator.OperatorSection;
+import Person.Driver;
+import Person.Operator;
+import Person.Person;
 
 public class Seat {
     private PositionType position;

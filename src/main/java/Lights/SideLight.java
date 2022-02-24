@@ -1,6 +1,6 @@
 package Lights;
 
-import main.java.FLF.PositionType;
+import FLF.PositionType;
 
 public class SideLight extends Lights{
 
@@ -8,5 +8,4 @@ public class SideLight extends Lights{
         super();
         this.position = pos;
     }
-
 }

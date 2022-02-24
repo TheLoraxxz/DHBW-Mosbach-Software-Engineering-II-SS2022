@@ -1,8 +1,8 @@
 package Driver;
 
-import main.java.Engine.PivotTurnable;
-import main.java.FLF.PositionType;
-import main.java.Lights.TurnSignalLight;
+import Engine.PivotTurnable;
+import FLF.PositionType;
+import Lights.TurnSignalLight;
 
 public class SteeringWheel {
     private TurnSignalLight[] lights;

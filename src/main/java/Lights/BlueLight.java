@@ -1,6 +1,6 @@
 package Lights;
 
-import main.java.FLF.PositionType;
+import FLF.PositionType;
 
 public class BlueLight extends Lights{
     private LED[] leds;

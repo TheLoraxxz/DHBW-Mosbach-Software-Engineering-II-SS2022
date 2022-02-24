@@ -1,15 +1,15 @@
 package Operator;
 
-import main.java.Engine.ElectricMotor;
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.ExtinguishDevices.GroundSprayNozzles;
-import main.java.ExtinguishDevices.HeadCannon;
-import main.java.ExtinguishDevices.MixDevice;
-import main.java.FLF.PositionType;
-import main.java.Joystick.GeneralJoystick;
-import main.java.Joystick.Joystick;
-import main.java.Lights.Lights;
-import main.java.Person.Operator;
+import Engine.ElectricMotor;
+import ExtinguishDevices.FrontCannon;
+import ExtinguishDevices.GroundSprayNozzles;
+import ExtinguishDevices.HeadCannon;
+import ExtinguishDevices.MixDevice;
+import FLF.PositionType;
+import Joystick.GeneralJoystick;
+import Joystick.Joystick;
+import Lights.Lights;
+import Person.Operator;
 
 import java.util.HashMap;
 

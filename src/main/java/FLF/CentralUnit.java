@@ -1,19 +1,19 @@
 package FLF;
 
-import main.java.Driver.DriverSection;
-import main.java.Engine.ElectricMotor;
-import main.java.Engine.PivotStatic;
-import main.java.Engine.PivotTurnable;
-import main.java.ExtinguishDevices.FoamTank;
-import main.java.ExtinguishDevices.FrontCannon;
-import main.java.ExtinguishDevices.GroundSprayNozzles;
-import main.java.ExtinguishDevices.HeadCannon;
-import main.java.ExtinguishDevices.MixDevice;
-import main.java.ExtinguishDevices.WaterTank;
-import main.java.Joystick.GeneralJoystick;
-import main.java.Lights.*;
-import main.java.Operator.OperatorSection;
-import main.java.Operator.SwitchType;
+import Driver.DriverSection;
+import Engine.ElectricMotor;
+import Engine.PivotStatic;
+import Engine.PivotTurnable;
+import ExtinguishDevices.FoamTank;
+import ExtinguishDevices.FrontCannon;
+import ExtinguishDevices.GroundSprayNozzles;
+import ExtinguishDevices.HeadCannon;
+import ExtinguishDevices.MixDevice;
+import ExtinguishDevices.WaterTank;
+import Joystick.GeneralJoystick;
+import Lights.*;
+import Operator.OperatorSection;
+import Operator.SwitchType;
 
 import java.util.HashMap;
 

@@ -1,6 +1,6 @@
 package Cabine;
 
-import main.java.FLF.CentralUnit;
+import FLF.CentralUnit;
 
 public class ReceiverModule {
     private CentralUnit centralUnit;

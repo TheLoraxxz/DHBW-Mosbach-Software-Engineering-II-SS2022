@@ -1,6 +1,6 @@
 package Engine;
 
-import main.java.FLF.PositionType;
+import FLF.PositionType;
 
 public class BreakDisk {
     private PositionType position;

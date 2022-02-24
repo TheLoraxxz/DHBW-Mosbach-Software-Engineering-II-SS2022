@@ -1,6 +1,6 @@
 package Operator;
 
-import main.java.Lights.Lights;
+import Lights.Lights;
 
 import java.util.HashMap;
 

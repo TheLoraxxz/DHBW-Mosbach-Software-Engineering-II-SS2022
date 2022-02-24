@@ -1,8 +1,8 @@
 package Driver;
 
-import main.java.Engine.ElectricMotor;
-import main.java.Engine.Pivot;
-import main.java.Lights.BreakLight;
+import Engine.ElectricMotor;
+import Engine.Pivot;
+import Lights.BreakLight;
 
 public class BreakPedal implements IPedal{
     private Pivot pivot;

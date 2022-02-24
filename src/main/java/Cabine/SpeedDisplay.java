@@ -1,6 +1,6 @@
 package Cabine;
 
-import main.java.Engine.Pivot;
+import Engine.Pivot;
 
 public class SpeedDisplay implements IDisplay{
     private Pivot pivot;

@@ -1,7 +1,7 @@
 package Engine;
 
-import main.java.FLF.Box;
-import main.java.FLF.Status;
+import FLF.Box;
+import FLF.Status;
 
 public class ElectricMotor {
     private Box box;

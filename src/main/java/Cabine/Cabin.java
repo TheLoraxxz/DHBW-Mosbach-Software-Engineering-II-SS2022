@@ -1,12 +1,12 @@
 package Cabine;
 
 
-import main.java.Driver.DriverSection;
-import main.java.Engine.Pivot;
-import main.java.FLF.Box;
-import main.java.FLF.CentralUnit;
-import main.java.FLF.PositionType;
-import main.java.Operator.OperatorSection;
+import Driver.DriverSection;
+import Engine.Pivot;
+import FLF.Box;
+import FLF.CentralUnit;
+import FLF.PositionType;
+import Operator.OperatorSection;
 
 public class Cabin {
 
