@@ -1,5 +1,8 @@
-package ExtinguishDevices;
+package task_01_Components;
 
+
+import ExtinguishDevices.FoamTank;
+import ExtinguishDevices.WaterTank;
 
 public class MixDevice {
     private MixType mixType;

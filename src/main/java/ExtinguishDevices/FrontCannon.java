@@ -1,5 +1,7 @@
 package ExtinguishDevices;
 
+import task_01_Components.MixDevice;
+
 public class FrontCannon extends Cannon {
     private FrontWaterStepsType steps;
 

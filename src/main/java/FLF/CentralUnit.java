@@ -1,5 +1,6 @@
 package FLF;
 
+import task_05_Adapter.Box;
 import Driver.DriverSection;
 import Engine.ElectricMotor;
 import Engine.PivotStatic;
@@ -8,7 +9,7 @@ import ExtinguishDevices.FoamTank;
 import ExtinguishDevices.FrontCannon;
 import ExtinguishDevices.GroundSprayNozzles;
 import ExtinguishDevices.HeadCannon;
-import ExtinguishDevices.MixDevice;
+import task_01_Components.MixDevice;
 import ExtinguishDevices.WaterTank;
 import Joystick.GeneralJoystick;
 import Lights.*;
@@ -47,7 +48,7 @@ public class CentralUnit {
 
 
     private GroundSprayNozzles[] groundSprayNozzles;
-    public CentralUnit(Box box,JoystickType type) {
+    public CentralUnit(Box box, JoystickType type) {
         associatedPersonel = new String[]{"Red Adair", "Sam"};
         this.lights = new HashMap<>();
         this.lights.put(SwitchType.SideLights, new Lights[10]); //creating the ten side Lights

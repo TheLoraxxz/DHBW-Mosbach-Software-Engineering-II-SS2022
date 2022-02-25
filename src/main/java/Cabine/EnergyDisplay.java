@@ -1,6 +1,6 @@
 package Cabine;
 
-import FLF.Box;
+import task_05_Adapter.Box;
 
 public class EnergyDisplay implements IDisplay{
 

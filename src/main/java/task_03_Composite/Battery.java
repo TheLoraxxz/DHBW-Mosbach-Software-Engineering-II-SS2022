@@ -1,4 +1,4 @@
-package FLF;
+package task_03_Composite;
 
 public class Battery {
     private boolean[][][] capacity;

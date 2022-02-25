@@ -4,7 +4,7 @@ import Engine.ElectricMotor;
 import ExtinguishDevices.FrontCannon;
 import ExtinguishDevices.GroundSprayNozzles;
 import ExtinguishDevices.HeadCannon;
-import ExtinguishDevices.MixDevice;
+import task_01_Components.MixDevice;
 import FLF.PositionType;
 import Joystick.GeneralJoystick;
 import Joystick.Joystick;

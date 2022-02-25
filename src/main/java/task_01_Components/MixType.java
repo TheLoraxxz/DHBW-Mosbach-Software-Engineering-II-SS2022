@@ -1,4 +1,4 @@
-package ExtinguishDevices;
+package task_01_Components;
 
 public enum MixType {
     three(3),

@@ -1,5 +1,7 @@
 package ExtinguishDevices;
 
+import task_01_Components.MixDevice;
+
 public class HeadCannon extends Cannon{
 
     private KnopRoofStepsType steps;

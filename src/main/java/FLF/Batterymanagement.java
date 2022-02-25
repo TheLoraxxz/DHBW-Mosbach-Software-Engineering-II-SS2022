@@ -1,5 +1,8 @@
 package FLF;
 
+import task_03_Composite.Battery;
+import task_05_Adapter.Box;
+
 public enum Batterymanagement {
     instance;
     Box boxx;
@@ -11,8 +14,5 @@ public enum Batterymanagement {
     }
     public void takeOut(int amount) {
         boxx.takeOut(amount);
-    }
-    public void charge(int amount) {
-        boxx.charge(amount);
     }
 }

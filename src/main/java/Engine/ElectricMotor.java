@@ -1,6 +1,6 @@
 package Engine;
 
-import FLF.Box;
+import task_05_Adapter.Box;
 import FLF.Status;
 
 public class ElectricMotor {

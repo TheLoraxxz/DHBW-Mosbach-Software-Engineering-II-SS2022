@@ -13,9 +13,12 @@ import Operator.LightSwitch;
 import Operator.SwitchType;
 import Person.Driver;
 import Person.Operator;
+import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import task_05_Adapter.Adapter;
+import task_05_Adapter.ChargingStation;
 
 import static org.junit.jupiter.api.Assertions.*;
 
