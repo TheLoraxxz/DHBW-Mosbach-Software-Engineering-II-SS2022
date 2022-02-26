@@ -19,6 +19,8 @@ import Operator.OperatorSection;
 import task_06_State.SwitchType;
 import task_08_Observer.ColourLEDFoam;
 import task_08_Observer.ColourLEDWater;
+import task_09_visitor.ITestApplication;
+import task_09_visitor.Testing;
 
 import java.util.HashMap;
 
@@ -152,6 +154,9 @@ public class CentralUnit {
         }
 
 
+        //Routinetest
+        ITestApplication test = new Testing();
+        this.frontCannon.acceptTest(test);
     }
 
     public void changeLightState(SwitchType switchType) {

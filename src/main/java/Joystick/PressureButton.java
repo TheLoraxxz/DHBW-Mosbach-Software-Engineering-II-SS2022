@@ -1,6 +1,6 @@
 package Joystick;
 
-import ExtinguishDevices.Cannon;
+import task_09_visitor.Cannon;
 import ExtinguishDevices.CannonState;
 import ExtinguishDevices.FrontCannon;
 import ExtinguishDevices.HeadCannon;
