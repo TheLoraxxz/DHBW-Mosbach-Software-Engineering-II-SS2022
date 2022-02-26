@@ -10,6 +10,8 @@ import task_06_State.ElectroMotorSwitch;
 import task_06_State.GroundNozzleSwitch;
 import task_06_State.LightSwitch;
 import task_06_State.SwitchType;
+import task_08_Observer.ColourLEDFoam;
+import task_08_Observer.ColourLEDWater;
 
 import java.util.HashMap;
 
@@ -47,8 +49,12 @@ public class ControlPanel {
     }
 
     private KnobRoofWaterCanon knobRoof;
+    private ColourLEDFoam ledFoam;
+    private ColourLEDWater ledWater;
 
-    ControlPanel(FrontCannon front, HeadCannon head, CentralUnit unit) {
+    ControlPanel(FrontCannon front, HeadCannon head, CentralUnit unit, ColourLEDFoam foam, ColourLEDWater water) {
+        this.ledFoam = foam;
+        this.ledWater = water;
         this.knobFront = new KnobFrontWaterCanon(front);
         this.knobRoof = new KnobRoofWaterCanon(head);
         this.motorSwitch = new ElectroMotorSwitch(unit);
@@ -63,5 +69,13 @@ public class ControlPanel {
                 case 4->this.switches[i] = new LightSwitch(SwitchType.headLightsRoof,unit);
             }
         }
+    }
+
+    public ColourLEDFoam getLedFoam() {
+        return ledFoam;
+    }
+
+    public ColourLEDWater getLedWater() {
+        return ledWater;
     }
 }

@@ -17,6 +17,8 @@ import Joystick.GeneralJoystick;
 import Lights.*;
 import Operator.OperatorSection;
 import task_06_State.SwitchType;
+import task_08_Observer.ColourLEDFoam;
+import task_08_Observer.ColourLEDWater;
 
 import java.util.HashMap;
 
@@ -115,8 +117,10 @@ public class CentralUnit {
             eventBus.register(lighting);
         }
         // LIghts finished
-        WaterTank tank1 = new WaterTank();
-        FoamTank tank2 = new FoamTank();
+        ColourLEDFoam ledFoam = new ColourLEDFoam();
+        ColourLEDWater ledWater = new ColourLEDWater();
+        WaterTank tank1 = new WaterTank(ledWater);
+        FoamTank tank2 = new FoamTank(ledFoam);
         mixer = new MixDevice(tank1,tank2);
         frontCannon = new FrontCannon(mixer);
         headCannon = new HeadCannon(mixer);
@@ -140,11 +144,11 @@ public class CentralUnit {
         pivotsTurnable = new PivotTurnable[]{new PivotTurnable(), new PivotTurnable()};
         if(type==JoystickType.seperate) {
             driverSection = new DriverSection(this.turnSignalLight,pivotsTurnable,this.motors,frontCannon,breakLight,null);
-            operatorSection = new OperatorSection(frontCannon, headCannon, null,this);
+            operatorSection = new OperatorSection(frontCannon, headCannon, null,this,ledFoam,ledWater);
         } else {
             GeneralJoystick joystick = new GeneralJoystick(frontCannon,headCannon);
             driverSection = new DriverSection(this.turnSignalLight,pivotsTurnable,this.motors,frontCannon,breakLight,joystick);
-            operatorSection = new OperatorSection(frontCannon, headCannon,joystick,this);
+            operatorSection = new OperatorSection(frontCannon, headCannon,joystick,this,ledFoam,ledWater);
         }
 
 

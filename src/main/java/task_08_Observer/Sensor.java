@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Sensor {
     private ISensorObserver led;
 
-    public Sensor() {
-
+    public Sensor(ISensorObserver led) {
+        this.led = led;
     }
 
     public void moreThan50() {

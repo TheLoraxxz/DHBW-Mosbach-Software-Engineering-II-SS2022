@@ -7,6 +7,8 @@ import FLF.PositionType;
 import Joystick.GeneralJoystick;
 import Joystick.Joystick;
 import Person.Operator;
+import task_08_Observer.ColourLEDFoam;
+import task_08_Observer.ColourLEDWater;
 
 public class OperatorSection {
 
@@ -25,8 +27,8 @@ public class OperatorSection {
     private GeneralJoystick gJoystick;
     private Operator operator;
 
-    public OperatorSection(FrontCannon front, HeadCannon head, Joystick joystick, CentralUnit unit) {
-        this.panel = new ControlPanel(front,head,unit);
+    public OperatorSection(FrontCannon front, HeadCannon head, Joystick joystick, CentralUnit unit, ColourLEDFoam ledFoam, ColourLEDWater water) {
+        this.panel = new ControlPanel(front,head,unit,ledFoam,water);
         if(this.joystick==null) {
             this.joystick = new JoystickHeadCanon(head);
         } else {
