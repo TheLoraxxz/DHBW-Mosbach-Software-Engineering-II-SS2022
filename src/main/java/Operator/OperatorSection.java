@@ -1,19 +1,12 @@
 package Operator;
 
-import Engine.ElectricMotor;
 import ExtinguishDevices.FrontCannon;
-import ExtinguishDevices.GroundSprayNozzles;
 import ExtinguishDevices.HeadCannon;
 import FLF.CentralUnit;
-import task_01_Components.MixDevice;
 import FLF.PositionType;
 import Joystick.GeneralJoystick;
 import Joystick.Joystick;
-import Lights.Lights;
 import Person.Operator;
-import task_06_State.SwitchType;
-
-import java.util.HashMap;
 
 public class OperatorSection {
 

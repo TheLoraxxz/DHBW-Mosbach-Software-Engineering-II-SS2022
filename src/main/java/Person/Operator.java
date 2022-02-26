@@ -2,6 +2,7 @@ package Person;
 
 import ExtinguishDevices.FrontWaterStepsType;
 import ExtinguishDevices.KnopRoofStepsType;
+import Joystick.GeneralJoystick;
 import Operator.OperatorSection;
 import task_06_State.SwitchType;
 
@@ -40,8 +41,9 @@ public class Operator extends FLFOperator {
     }
 
     @Override
-    public void tiltJoystick(int[] axis) {
-        // The_Loraxxz komplex aufgabe :D :O
+    public void tiltJoystick(byte[] axis) {
+        GeneralJoystick joystick =(GeneralJoystick) this.getOperatorSection().getJoystick();
+        joystick.tilt(axis);
     }
 
     public void pressSwitch(SwitchType switchType) {

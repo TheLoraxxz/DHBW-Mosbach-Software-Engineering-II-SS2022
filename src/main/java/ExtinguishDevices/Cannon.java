@@ -1,6 +1,8 @@
 package ExtinguishDevices;
 
-public abstract class Cannon {
+import task_02_SOA.Subscriber;
+
+public abstract class Cannon extends Subscriber {
 
 
 

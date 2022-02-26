@@ -1,5 +1,7 @@
 package FLF;
 
+import com.google.common.eventbus.EventBus;
+import task_02_SOA.*;
 import task_05_Adapter.Box;
 import Driver.DriverSection;
 import Engine.ElectricMotor;
@@ -45,10 +47,13 @@ public class CentralUnit {
     private OperatorSection operatorSection;
     private DriverSection driverSection;
 
+    private EventBus eventBus;
+
 
 
     private GroundSprayNozzles[] groundSprayNozzles;
     public CentralUnit(Box box, JoystickType type) {
+        EventBus bus = new EventBus();
         associatedPersonel = new String[]{"Red Adair", "Sam"};
         this.lights = new HashMap<>();
         this.lights.put(SwitchType.SideLights, new Lights[10]); //creating the ten side Lights
@@ -89,6 +94,12 @@ public class CentralUnit {
         //warning lights
         this.lights.get(SwitchType.warningLights)[0] = new WarningLight(PositionType.fronlefttop);
         this.lights.get(SwitchType.warningLights)[1] = new WarningLight(PositionType.backrighttop);
+        for (SwitchType key:this.lights.keySet()) {
+            for (Lights light:this.lights.get(key)) {
+                eventBus.register(light);
+            }
+        }
+
         //turnseignalLights
         this.turnSignalLight = new TurnSignalLight[]{
             new TurnSignalLight(PositionType.frontleftbottom),
@@ -96,7 +107,13 @@ public class CentralUnit {
             new TurnSignalLight(PositionType.backleftbottom),
             new TurnSignalLight(PositionType.backrightbottom)
         };
+        for (TurnSignalLight lighting: this.turnSignalLight) {
+            eventBus.register(lighting);
+        }
         this.breakLight = new BreakLight[]{new BreakLight(PositionType.backleftbottom),new BreakLight(PositionType.backrightbottom)};
+        for (BreakLight lighting: this.breakLight) {
+            eventBus.register(lighting);
+        }
         // LIghts finished
         WaterTank tank1 = new WaterTank();
         FoamTank tank2 = new FoamTank();
@@ -111,8 +128,14 @@ public class CentralUnit {
             new GroundSprayNozzles(tank1),
             new GroundSprayNozzles(tank1),
             new GroundSprayNozzles(tank1)};
-        
+        for (GroundSprayNozzles nozzles: this.groundSprayNozzles) {
+            eventBus.register(nozzles);
+        }
         this.motors = new ElectricMotor[]{new ElectricMotor(box),new ElectricMotor(box)};
+        for (ElectricMotor motor: this.motors) {
+            eventBus.register(motor);
+        }
+
         pivotsStatic = new PivotStatic[]{new PivotStatic(), new PivotStatic()};
         pivotsTurnable = new PivotTurnable[]{new PivotTurnable(), new PivotTurnable()};
         if(type==JoystickType.seperate) {
@@ -123,29 +146,26 @@ public class CentralUnit {
             driverSection = new DriverSection(this.turnSignalLight,pivotsTurnable,this.motors,frontCannon,breakLight,joystick);
             operatorSection = new OperatorSection(frontCannon, headCannon,joystick,this);
         }
-        
-    }
 
-    public void turnOnLights(SwitchType switchType) {
 
     }
 
-    public void turnOffLights(SwitchType switchType) {
-
+    public void changeLightState(SwitchType switchType) {
+        switch (switchType) {
+            case headLightsFront -> eventBus.post(new HeadLightsFrontEvent());
+            case BlueLights -> eventBus.post(new BlueLightsEvent());
+            case headLightsRoof -> eventBus.post(new HeadLightsRoofEvent());
+            case SideLights -> eventBus.post(new SideLightsEvent());
+            case warningLights -> eventBus.post(new WarningLightsEvent());
+            default -> throw new RuntimeException();
+        }
     }
-    public void turnOnMotor() {
 
+    public void changeMotorState() {
+        eventBus.post(new MotorEvent());
     }
-
-    public void turnOfMotor() {
-
-    }
-
-    public void turnOnGroundSprayNozzles() {
-
-    }
-    public void turnOfGroundSprayNozzles(){
-
+    public void changeGroundNozzleSpraysState() {
+        eventBus.post(new GroundSprayNozzlesEvent());
     }
 
     public DriverSection getDriverSection() {

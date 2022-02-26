@@ -1,9 +1,12 @@
 package Engine;
 
+import com.google.common.eventbus.Subscribe;
+import task_02_SOA.MotorEvent;
+import task_02_SOA.Subscriber;
 import task_05_Adapter.Box;
 import FLF.Status;
 
-public class ElectricMotor {
+public class ElectricMotor extends Subscriber {
     private Box box;
     
     public ElectricMotor(Box box) {
@@ -27,5 +30,10 @@ public class ElectricMotor {
 
     public boolean isOn() {
         return box.getStatus()==Status.use;
+    }
+
+    @Subscribe
+    public void recieve(MotorEvent event) {
+        setOn(!isOn());
     }
 }
