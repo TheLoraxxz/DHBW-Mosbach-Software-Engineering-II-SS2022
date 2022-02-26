@@ -4,7 +4,12 @@ import Engine.ElectricMotor;
 import ExtinguishDevices.FrontCannon;
 import ExtinguishDevices.GroundSprayNozzles;
 import ExtinguishDevices.HeadCannon;
+import FLF.CentralUnit;
 import Lights.Lights;
+import task_06_State.ElectroMotorSwitch;
+import task_06_State.GroundNozzleSwitch;
+import task_06_State.LightSwitch;
+import task_06_State.SwitchType;
 
 import java.util.HashMap;
 
@@ -43,19 +48,19 @@ public class ControlPanel {
 
     private KnobRoofWaterCanon knobRoof;
 
-    ControlPanel(FrontCannon front, HeadCannon head, HashMap<SwitchType, Lights[]> lights, ElectricMotor[] motor,GroundSprayNozzles[] nozzles) {
+    ControlPanel(FrontCannon front, HeadCannon head, CentralUnit unit) {
         this.knobFront = new KnobFrontWaterCanon(front);
         this.knobRoof = new KnobRoofWaterCanon(head);
-        this.motorSwitch = new ElectroMotorSwitch(motor);
-        this.nozzleSwitch = new GroundNozzleSwitch(SwitchType.groundSprayNozzles,nozzles);
+        this.motorSwitch = new ElectroMotorSwitch(unit);
+        this.nozzleSwitch = new GroundNozzleSwitch(SwitchType.groundSprayNozzles,unit);
         this.switches = new LightSwitch[5];
         for (byte i=0;i<5;i++) {
             switch (i) {
-                case 0->this.switches[i] = new LightSwitch(SwitchType.BlueLights,lights);
-                case 1->this.switches[i] = new LightSwitch(SwitchType.SideLights,lights);
-                case 2->this.switches[i] = new LightSwitch(SwitchType.warningLights,lights);
-                case 3->this.switches[i] = new LightSwitch(SwitchType.headLightsFront,lights);
-                case 4->this.switches[i] = new LightSwitch(SwitchType.headLightsRoof,lights);
+                case 0->this.switches[i] = new LightSwitch(SwitchType.BlueLights,unit);
+                case 1->this.switches[i] = new LightSwitch(SwitchType.SideLights,unit);
+                case 2->this.switches[i] = new LightSwitch(SwitchType.warningLights,unit);
+                case 3->this.switches[i] = new LightSwitch(SwitchType.headLightsFront,unit);
+                case 4->this.switches[i] = new LightSwitch(SwitchType.headLightsRoof,unit);
             }
         }
     }

@@ -14,7 +14,7 @@ import ExtinguishDevices.WaterTank;
 import Joystick.GeneralJoystick;
 import Lights.*;
 import Operator.OperatorSection;
-import Operator.SwitchType;
+import task_06_State.SwitchType;
 
 import java.util.HashMap;
 
@@ -117,13 +117,35 @@ public class CentralUnit {
         pivotsTurnable = new PivotTurnable[]{new PivotTurnable(), new PivotTurnable()};
         if(type==JoystickType.seperate) {
             driverSection = new DriverSection(this.turnSignalLight,pivotsTurnable,this.motors,frontCannon,breakLight,null);
-            operatorSection = new OperatorSection(frontCannon, headCannon, lights, this.motors, mixer,null,groundSprayNozzles);
+            operatorSection = new OperatorSection(frontCannon, headCannon, null,this);
         } else {
             GeneralJoystick joystick = new GeneralJoystick(frontCannon,headCannon);
             driverSection = new DriverSection(this.turnSignalLight,pivotsTurnable,this.motors,frontCannon,breakLight,joystick);
-            operatorSection = new OperatorSection(frontCannon, headCannon, lights, this.motors, mixer,joystick,groundSprayNozzles);
+            operatorSection = new OperatorSection(frontCannon, headCannon,joystick,this);
         }
         
+    }
+
+    public void turnOnLights(SwitchType switchType) {
+
+    }
+
+    public void turnOffLights(SwitchType switchType) {
+
+    }
+    public void turnOnMotor() {
+
+    }
+
+    public void turnOfMotor() {
+
+    }
+
+    public void turnOnGroundSprayNozzles() {
+
+    }
+    public void turnOfGroundSprayNozzles(){
+
     }
 
     public DriverSection getDriverSection() {

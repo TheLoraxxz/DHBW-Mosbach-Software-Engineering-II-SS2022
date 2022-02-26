@@ -3,7 +3,7 @@ package Person;
 import ExtinguishDevices.FrontWaterStepsType;
 import ExtinguishDevices.KnopRoofStepsType;
 import Operator.OperatorSection;
-import Operator.SwitchType;
+import task_06_State.SwitchType;
 
 public class Operator extends FLFOperator {
     public Operator() {
@@ -47,25 +47,11 @@ public class Operator extends FLFOperator {
     public void pressSwitch(SwitchType switchType) {
         if (this.operatorSection != null) {
             if (switchType == SwitchType.electroMotor) {
-                if (this.operatorSection.getPanel().getMotorSwitch().isOn()) {
-                    this.operatorSection.getPanel().getMotorSwitch().off();
-                } else {
-                    this.operatorSection.getPanel().getMotorSwitch().on();
-                }
+                this.operatorSection.getPanel().getMotorSwitch().press();
             } else if (switchType == SwitchType.groundSprayNozzles) {
-                if(this.operatorSection.getPanel().getNozzleSwitch().isOn()) {
-                    this.operatorSection.getPanel().getNozzleSwitch().on();
-                } else {
-                    this.operatorSection.getPanel().getNozzleSwitch().off();
-                }
-                
+               this.operatorSection.getPanel().getNozzleSwitch().press();
             } else {
-                if (this.operatorSection.getPanel().getLightSwitches()[switchType.getValue()].isOn()) {
-                    this.operatorSection.getPanel().getLightSwitches()[switchType.getValue()].off();
-                } else {
-                    this.operatorSection.getPanel().getLightSwitches()[switchType.getValue()].on();
-                }
-
+                this.operatorSection.getPanel().getLightSwitches()[switchType.getValue()].press();
             }
         }
     }
