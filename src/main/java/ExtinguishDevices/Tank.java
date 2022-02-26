@@ -13,7 +13,7 @@ public abstract class Tank {
     public void fill(int amount) {
         int max_cap = this.capacity.length*this.capacity[0].length*this.capacity[0][0].length;
         int cap = this.getCapacity();
-        setColourLED(cap,max_cap);
+        setColourLED(cap+amount,max_cap);
         if(amount+cap>=max_cap){
             for(int i=0;i<this.capacity.length;i++) {
                 for(int j=0;j<this.capacity[0].length;j++) {
@@ -43,7 +43,7 @@ public abstract class Tank {
     public float takeOut(float foamV) {
         int amount = (int) foamV;
         int cap = this.getCapacity();
-        setColourLED(cap,this.capacity.length*this.capacity[0].length*this.capacity[0][0].length);
+        setColourLED(cap+amount,this.capacity.length*this.capacity[0].length*this.capacity[0][0].length);
         for(int i=0;i<this.capacity.length;i++) {
             for(int j=0;j<this.capacity[0].length;j++) {
                 for(int k=0;k<this.capacity[0][0].length;k++) {
