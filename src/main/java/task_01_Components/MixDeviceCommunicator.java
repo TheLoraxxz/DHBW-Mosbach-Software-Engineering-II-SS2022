@@ -41,6 +41,7 @@ public class MixDeviceCommunicator {
 
         } catch (IOException | InterruptedException | ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
             e.printStackTrace();
+            throw new RuntimeException();
         }
 
     }
@@ -53,7 +54,6 @@ public class MixDeviceCommunicator {
         } catch (InvocationTargetException | IllegalAccessException e) {
             e.printStackTrace();
         }
-
     }
 
     public void setToNextMix() {

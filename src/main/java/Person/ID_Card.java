@@ -5,6 +5,10 @@ public class ID_Card {
         return rfidChip.getID();
     }
 
+    public RFIDChip getRfidChip() {
+        return rfidChip;
+    }
+
     private RFIDChip rfidChip;
 
     public ID_Card(String name, int code) {

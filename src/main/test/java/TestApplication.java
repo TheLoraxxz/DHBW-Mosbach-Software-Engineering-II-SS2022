@@ -443,6 +443,6 @@ public class TestApplication {
 
     private void ChargeBatterie()
     {
-        flf.getBatteries().charge(400000);
+
     }
 }
