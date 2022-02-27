@@ -1,6 +1,7 @@
 package ExtinguishDevices;
 
 import task_01_Components.MixDevice;
+import task_01_Components.MixDeviceCommunicator;
 import task_09_visitor.Cannon;
 import task_09_visitor.ITestApplication;
 
@@ -8,8 +9,8 @@ public class FrontCannon extends Cannon {
     private FrontWaterStepsType steps;
 
     private float tiltDegree;
-    private MixDevice mixDevice;
-    public FrontCannon(MixDevice mixer) {
+    private MixDeviceCommunicator mixDevice;
+    public FrontCannon(MixDeviceCommunicator mixer) {
         this.tiltDegree = 0;
         this.steps = FrontWaterStepsType.one;
         this.mixDevice = mixer;
@@ -19,7 +20,7 @@ public class FrontCannon extends Cannon {
     public void pumpOut() {
         this.mixDevice.defill(steps.getValue());
     }
-    public MixDevice getMixDevice() {
+    public MixDeviceCommunicator getMixDevice() {
         return mixDevice;
     }
 
