@@ -2,6 +2,7 @@ package task_09_visitor;
 
 import ExtinguishDevices.*;
 import task_01_Components.MixDevice;
+import task_01_Components.MixDeviceCommunicator;
 
 public class Testing implements ITestApplication {
 
@@ -15,7 +16,7 @@ public class Testing implements ITestApplication {
     }
 
     @Override
-    public boolean routine(FrontCannon type, MixDevice device) {
+    public boolean routine(FrontCannon type, MixDeviceCommunicator device) {
         int initCapacityWater = device.getWaterTank().getCapacity();
         int initCapacityFoam = device.getFoamTank().getCapacity();
         type.setCannonState(CannonState.active);
@@ -28,7 +29,7 @@ public class Testing implements ITestApplication {
     }
 
     @Override
-    public boolean routine(HeadCannon type,MixDevice device) {
+    public boolean routine(HeadCannon type,MixDeviceCommunicator device) {
         int initCapacityWater = device.getWaterTank().getCapacity();
         int initCapacityFoam = device.getFoamTank().getCapacity();
         type.setCannonState(CannonState.active);

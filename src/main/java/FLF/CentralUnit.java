@@ -1,6 +1,7 @@
 package FLF;
 
 import com.google.common.eventbus.EventBus;
+import task_01_Components.MixDeviceCommunicator;
 import task_02_SOA.*;
 import task_05_Adapter.Box;
 import Driver.DriverSection;
@@ -40,11 +41,11 @@ public class CentralUnit {
     private PivotTurnable[] pivotsTurnable;
     private PivotStatic[] pivotsStatic;
 
-    public MixDevice getMixer() {
+    public MixDeviceCommunicator getMixer() {
         return mixer;
     }
 
-    private MixDevice mixer;
+    private MixDeviceCommunicator mixer;
     private FrontCannon frontCannon;
     private HeadCannon headCannon;
 
@@ -123,7 +124,7 @@ public class CentralUnit {
         ColourLEDWater ledWater = new ColourLEDWater();
         WaterTank tank1 = new WaterTank(ledWater);
         FoamTank tank2 = new FoamTank(ledFoam);
-        mixer = new MixDevice(tank1,tank2);
+        mixer = new MixDeviceCommunicator(tank1,tank2);
         frontCannon = new FrontCannon(mixer);
         headCannon = new HeadCannon(mixer);
         this.groundSprayNozzles = new GroundSprayNozzles[]{

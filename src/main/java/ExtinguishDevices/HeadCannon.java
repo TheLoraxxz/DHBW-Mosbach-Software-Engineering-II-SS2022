@@ -1,6 +1,7 @@
 package ExtinguishDevices;
 
 import task_01_Components.MixDevice;
+import task_01_Components.MixDeviceCommunicator;
 import task_09_visitor.Cannon;
 import task_09_visitor.ITestApplication;
 
@@ -14,9 +15,9 @@ public class HeadCannon extends Cannon {
     }
 
     private boolean isMovedOut;
-    private MixDevice mixDevice;
+    private MixDeviceCommunicator mixDevice;
 
-    public HeadCannon(MixDevice mixing) {
+    public HeadCannon(MixDeviceCommunicator mixing) {
         super();
         this.steps = KnopRoofStepsType.a;
         segments = new Segments[]{
@@ -30,7 +31,7 @@ public class HeadCannon extends Cannon {
         return steps;
     }
 
-    public MixDevice getMixDevice() {
+    public MixDeviceCommunicator getMixDevice() {
         return mixDevice;
     }
 
