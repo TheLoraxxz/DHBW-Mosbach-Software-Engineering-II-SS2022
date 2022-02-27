@@ -1,16 +1,21 @@
-package Operator;
+package task_06_State;
 
 import ExtinguishDevices.CannonState;
 import ExtinguishDevices.GroundSprayNozzles;
+import FLF.CentralUnit;
 
 public class GroundNozzleSwitch extends Switch  {
-    private GroundSprayNozzles[] sprayNozzles;
 
-    GroundNozzleSwitch(SwitchType type,GroundSprayNozzles[] nozzles) {
-        super(type);
-        this.sprayNozzles = nozzles;
+    public GroundNozzleSwitch(SwitchType type, CentralUnit unit) {
+        super(type,unit);
     }
 
+
+    @Override
+    public void press() {
+        this.state.switchState(this);
+    }
+    /*
     @Override
     public void on() {
         for (GroundSprayNozzles groundSprayNozzles : sprayNozzles) {
@@ -27,6 +32,6 @@ public class GroundNozzleSwitch extends Switch  {
         for (GroundSprayNozzles groundSprayNozzles : sprayNozzles) {
             groundSprayNozzles.setCannonState(CannonState.inactive);
         }
-    }
+    }*/
     
 }

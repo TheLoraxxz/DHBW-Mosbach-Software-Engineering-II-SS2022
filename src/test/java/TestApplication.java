@@ -9,8 +9,8 @@ import Lights.BlueLight;
 import Lights.LED;
 import Lights.Lights;
 import Lights.WarningLight;
-import Operator.LightSwitch;
-import Operator.SwitchType;
+import task_06_State.LightSwitch;
+import task_06_State.SwitchType;
 import Person.Driver;
 import Person.Operator;
 import org.junit.jupiter.api.BeforeEach;
@@ -222,8 +222,9 @@ public class TestApplication {
         StartFLF();
         CheckLightsOn();
         CheckTanks();
-        flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getNozzleSwitch().on();
-        flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getNozzleSwitch().off();
+        //bitte ändern
+        //flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getNozzleSwitch().on();
+        //flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getNozzleSwitch().off();
         CheckWaterConsumption(100550);
         ChangeFrontCannonState(3,FrontWaterStepsType.six,2);
         CheckWaterConsumption(92000);

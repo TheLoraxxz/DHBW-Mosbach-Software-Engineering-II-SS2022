@@ -1,17 +1,14 @@
 package Operator;
 
-import Engine.ElectricMotor;
 import ExtinguishDevices.FrontCannon;
-import ExtinguishDevices.GroundSprayNozzles;
 import ExtinguishDevices.HeadCannon;
-import ExtinguishDevices.MixDevice;
+import FLF.CentralUnit;
 import FLF.PositionType;
 import Joystick.GeneralJoystick;
 import Joystick.Joystick;
-import Lights.Lights;
 import Person.Operator;
-
-import java.util.HashMap;
+import task_08_Observer.ColourLEDFoam;
+import task_08_Observer.ColourLEDWater;
 
 public class OperatorSection {
 
@@ -30,8 +27,8 @@ public class OperatorSection {
     private GeneralJoystick gJoystick;
     private Operator operator;
 
-    public OperatorSection(FrontCannon front, HeadCannon head, HashMap<SwitchType, Lights[]> lights, ElectricMotor[] motor, MixDevice mixing,Joystick joystick,GroundSprayNozzles[] nozzle) {
-        this.panel = new ControlPanel(front,head,lights,motor,nozzle);
+    public OperatorSection(FrontCannon front, HeadCannon head, Joystick joystick, CentralUnit unit, ColourLEDFoam ledFoam, ColourLEDWater water) {
+        this.panel = new ControlPanel(front,head,unit,ledFoam,water);
         if(this.joystick==null) {
             this.joystick = new JoystickHeadCanon(head);
         } else {

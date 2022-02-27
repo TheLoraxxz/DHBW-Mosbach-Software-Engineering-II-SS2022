@@ -1,6 +1,8 @@
 package Lights;
 
 import FLF.PositionType;
+import com.google.common.eventbus.Subscribe;
+import task_02_SOA.BlueLightsEvent;
 
 public class BlueLight extends Lights{
     private LED[] leds;
@@ -36,8 +38,17 @@ public class BlueLight extends Lights{
     public void off() {
         for (LED led:
                 leds) {
-            led.setOn(true);
+            led.setOn(false);
         }
         super.off();
+    }
+
+    @Subscribe
+    public void recieving(BlueLightsEvent event) {
+        if (this.isOn()) {
+            off();
+        } else {
+            on();
+        }
     }
 }

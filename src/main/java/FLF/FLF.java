@@ -1,5 +1,6 @@
 package FLF;
 
+import task_05_Adapter.Box;
 import Cabine.Cabin;
 
 public class FLF {

@@ -1,6 +1,10 @@
 package ExtinguishDevices;
 
-public class HeadCannon extends Cannon{
+import task_01_Components.MixDevice;
+import task_09_visitor.Cannon;
+import task_09_visitor.ITestApplication;
+
+public class HeadCannon extends Cannon {
 
     private KnopRoofStepsType steps;
     private Segments[] segments;
@@ -57,4 +61,8 @@ public class HeadCannon extends Cannon{
         this.cannonState = cannonState;
     }
 
+    @Override
+    public boolean acceptTest(ITestApplication visitor) {
+        return visitor.routine(this,mixDevice);
+    }
 }

@@ -1,8 +1,11 @@
 package ExtinguishDevices;
 
+import task_08_Observer.ISensorObserver;
+
 public class WaterTank extends Tank{
 
-    public WaterTank() {
+    public WaterTank(ISensorObserver led) {
+        super(led);
         this.capacity= new boolean[75][45][30];
         for(int i=0;i<this.capacity.length;i++) {
             for(int j=0;j<this.capacity[0].length;j++) {

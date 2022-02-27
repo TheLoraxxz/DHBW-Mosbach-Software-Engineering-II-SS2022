@@ -3,7 +3,7 @@ package Cabine;
 
 import Driver.DriverSection;
 import Engine.Pivot;
-import FLF.Box;
+import task_05_Adapter.Box;
 import FLF.CentralUnit;
 import FLF.PositionType;
 import Operator.OperatorSection;

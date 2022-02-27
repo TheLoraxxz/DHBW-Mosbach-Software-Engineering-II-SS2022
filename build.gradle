@@ -10,10 +10,25 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'com.google.guava', name: 'guava', version: '31.0.1-jre'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
 test {
     useJUnitPlatform()
+}
+
+task build_jar(type:Jar) {
+    project.archivesBaseName="Configuration"
+    from {configurations.runtimeClasspath.collect {it.isDirectory() ? it:zipTree(it)}}
+    with jar
+
+    delete "jar"
+    mkdir "jar"
+
+    copy {
+        from 'build/libs/Motor.jar'
+        into "jar/"
+    }
 }

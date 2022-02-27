@@ -1,4 +1,4 @@
-package Operator;
+package task_06_State;
 
 
 public enum SwitchType {

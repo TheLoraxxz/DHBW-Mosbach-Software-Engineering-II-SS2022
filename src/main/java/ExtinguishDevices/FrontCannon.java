@@ -1,5 +1,9 @@
 package ExtinguishDevices;
 
+import task_01_Components.MixDevice;
+import task_09_visitor.Cannon;
+import task_09_visitor.ITestApplication;
+
 public class FrontCannon extends Cannon {
     private FrontWaterStepsType steps;
 
@@ -40,5 +44,10 @@ public class FrontCannon extends Cannon {
 
     public float getTiltDegree() {
         return tiltDegree;
+    }
+
+    @Override
+    public boolean acceptTest(ITestApplication visitor) {
+        return visitor.routine(this,this.mixDevice);
     }
 }

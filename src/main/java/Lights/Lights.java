@@ -1,8 +1,9 @@
 package Lights;
 
 import FLF.PositionType;
+import task_02_SOA.Subscriber;
 
-public abstract class Lights {
+public abstract class Lights extends Subscriber {
     protected PositionType position;
 
 

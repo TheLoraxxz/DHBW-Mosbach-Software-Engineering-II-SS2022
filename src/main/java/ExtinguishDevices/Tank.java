@@ -1,11 +1,19 @@
 package ExtinguishDevices;
 
+import task_08_Observer.ISensorObserver;
+import task_08_Observer.Sensor;
+
 public abstract class Tank {
     protected boolean[][][] capacity;
+    protected Sensor sensor;
+    public Tank(ISensorObserver led) {
+        this.sensor = new Sensor(led);
+    }
 
     public void fill(int amount) {
         int max_cap = this.capacity.length*this.capacity[0].length*this.capacity[0][0].length;
         int cap = this.getCapacity();
+        setColourLED(cap+amount,max_cap);
         if(amount+cap>=max_cap){
             for(int i=0;i<this.capacity.length;i++) {
                 for(int j=0;j<this.capacity[0].length;j++) {
@@ -35,6 +43,7 @@ public abstract class Tank {
     public float takeOut(float foamV) {
         int amount = (int) foamV;
         int cap = this.getCapacity();
+        setColourLED(cap+amount,this.capacity.length*this.capacity[0].length*this.capacity[0][0].length);
         for(int i=0;i<this.capacity.length;i++) {
             for(int j=0;j<this.capacity[0].length;j++) {
                 for(int k=0;k<this.capacity[0][0].length;k++) {
@@ -75,5 +84,20 @@ public abstract class Tank {
             }
         }
         return cap;
+    }
+
+    public void setColourLED(int cap,int maxcap) {
+        if (cap*2<maxcap) {
+            if (cap*10<maxcap) {
+                this.sensor.lessThan10();
+            } else if(cap*4<maxcap) {
+                this.sensor.lessThan25();
+            } else {
+                this.sensor.lessThan50();
+            }
+        } else {
+            this.sensor.moreThan50();
+        }
+
     }
 }

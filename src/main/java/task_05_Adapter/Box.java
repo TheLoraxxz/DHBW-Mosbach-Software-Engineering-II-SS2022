@@ -1,4 +1,7 @@
-package FLF;
+package task_05_Adapter;
+
+import task_03_Composite.Battery;
+import FLF.Status;
 
 public class Box {
     private Status batterystatus;
@@ -8,8 +11,7 @@ public class Box {
         this.batterystatus = Status.idle;
     }
     public void turnOn() {
-        this.
-        batterystatus = Status.use;
+        this.batterystatus = Status.use;
     }
 
     public void turnOf() {
@@ -20,7 +22,8 @@ public class Box {
         return this.batterystatus;
     }
 
-    public void charge(int amount) {
+    public void charge(int pole1,int pole2,int pole3) {
+        int amount = pole1+pole2+pole3;
         for (Battery battery : batteries) {
             battery.charge(amount/4);
         }

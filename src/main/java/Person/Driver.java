@@ -1,6 +1,7 @@
 package Person;
 
 import Driver.DriverSection;
+import Joystick.GeneralJoystick;
 
 public class Driver extends FLFOperator{
     public Driver() {
@@ -69,8 +70,8 @@ public class Driver extends FLFOperator{
     }
 
     @Override
-    public void tiltJoystick(int[] axis) {
-
+    public void tiltJoystick(byte[] axis) {
+        System.out.println("cant use because no right to access it");
     }
 
 

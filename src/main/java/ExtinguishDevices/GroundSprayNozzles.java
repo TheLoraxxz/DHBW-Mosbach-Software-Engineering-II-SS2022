@@ -1,5 +1,10 @@
 package ExtinguishDevices;
 
+import com.google.common.eventbus.Subscribe;
+import task_02_SOA.GroundSprayNozzlesEvent;
+import task_09_visitor.Cannon;
+import task_09_visitor.ITestApplication;
+
 public class GroundSprayNozzles extends Cannon {
     private WaterTank waterTank;
     public GroundSprayNozzles(WaterTank tank) {
@@ -21,5 +26,15 @@ public class GroundSprayNozzles extends Cannon {
         } else {
             this.cannonState = CannonState.throwingExtinguishMedium;
         }
+    }
+
+    @Subscribe
+    public void recieve(GroundSprayNozzlesEvent event) {
+        this.pumpOut();
+    }
+
+    @Override
+    public boolean acceptTest(ITestApplication visitor) {
+        return visitor.routine(this,waterTank);
     }
 }
