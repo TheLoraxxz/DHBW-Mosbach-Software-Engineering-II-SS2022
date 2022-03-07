@@ -1,6 +1,6 @@
 package task_03_Composite;
 
-public class Cell extends Battery2{
+public class Cell extends Battery {
     private boolean isEmpty;
     public Cell(Subcell parent) {
     parentCell =parent;
@@ -26,7 +26,7 @@ public class Cell extends Battery2{
     }
 
     @Override
-    protected int getCapacity() {
+    public int getCapacity() {
         if (isEmpty) {
             return 0;
         } else {

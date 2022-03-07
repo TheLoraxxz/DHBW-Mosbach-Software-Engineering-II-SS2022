@@ -58,7 +58,7 @@ public class CentralUnit {
 
     private GroundSprayNozzles[] groundSprayNozzles;
     public CentralUnit(Box box, JoystickType type) {
-        EventBus bus = new EventBus();
+        this.eventBus = new EventBus();
         associatedPersonel = new String[]{"Red Adair", "Sam"};
         this.lights = new HashMap<>();
         this.lights.put(SwitchType.SideLights, new Lights[10]); //creating the ten side Lights
