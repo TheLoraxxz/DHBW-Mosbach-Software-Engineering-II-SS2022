@@ -21,17 +21,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-task build_jar(type:Jar) {
-    project.archivesBaseName="Configuration"
-    from {configurations.runtimeClasspath.collect {it.isDirectory() ? it:zipTree(it)}}
-    with jar
-
-    delete "jar"
-    mkdir "jar"
-
-    copy {
-        from 'build/libs/Motor.jar'
-        into "jar/"
-    }
-}
