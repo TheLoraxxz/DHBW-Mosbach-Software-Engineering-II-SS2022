@@ -22,13 +22,13 @@ public class MixDeviceCommunicator {
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             String line;
             boolean isComponentAccepted = false;
-
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
                 if (line.contains("verified")) {
                     isComponentAccepted = true;
                 }
             }
+            System.out.println(line);
             if (!isComponentAccepted){
                 throw new RuntimeException();
             }
