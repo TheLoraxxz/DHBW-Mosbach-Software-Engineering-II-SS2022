@@ -1,16 +1,9 @@
 package task_03_Composite;
 
-public class Battery {
+public abstract class Battery {
     protected Battery parentCell;
     protected Battery[] subcells;
 
-    public Battery() {
-        parentCell = null;
-        subcells = new Battery[100];
-        for (int i =0;i<100;++i){
-            subcells[i] = new MainCell(this);
-        }
-    }
     public void charge(int amount) {
         for (Battery bat:subcells) {
             if (amount-1000>0) {

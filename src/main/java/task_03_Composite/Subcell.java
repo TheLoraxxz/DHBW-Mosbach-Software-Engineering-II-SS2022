@@ -4,7 +4,7 @@ public class Subcell extends Battery {
 
     public Subcell(MainCell main) {
         this.parentCell = main;
-        this.subcells = new Battery[10];
+        this.subcells = new Cell[10];
         for (int i =0;i<10;++i) {
             this.subcells[i] = new Cell(this);
         }

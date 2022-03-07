@@ -13,7 +13,7 @@ public class MixDeviceCommunicator {
     private Object mixDevice;
     public MixDeviceCommunicator(WaterTank water, FoamTank foam) {
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("C:\\Program Files\\Java\\jdk-17.0.1\\bin\\jarsigner", "-verify", "jar/Configuration.jar");
+            ProcessBuilder processBuilder = new ProcessBuilder("C:\\Program Files\\Java\\jdk-17.0.2\\bin\\jarsigner", "-verify", "jar/Configuration.jar");
             Process process = processBuilder.start();
             process.waitFor();
 

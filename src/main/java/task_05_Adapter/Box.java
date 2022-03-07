@@ -1,13 +1,14 @@
 package task_05_Adapter;
 
 import FLF.Status;
+import task_03_Composite.Batteries;
 import task_03_Composite.Battery;
 
 public class Box {
     private Status batterystatus;
     private Battery[] batteries;
     public Box() {
-        this.batteries = new Battery[]{new Battery(),new Battery(),new Battery(),new Battery()};
+        this.batteries = new Battery[]{new Batteries(),new Batteries(),new Batteries(),new Batteries()};
         this.batterystatus = Status.idle;
     }
     public void turnOn() {
