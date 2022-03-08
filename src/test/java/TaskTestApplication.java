@@ -169,9 +169,13 @@ public class TaskTestApplication {
     @Order(8)
     public void Task08()
     {
+        //testet die verschiedenen licht stufen der zwei leds
         assertEquals(12500,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(2500,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         flf.getCabin().getSeats()[1].setPerson(new Operator());
+
+        //water led
+        assertEquals(ColourType.off,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
         flf.getCentralUnit().getMixer().getWaterTank().takeOut(6251); //50%
         assertEquals(6249,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.yellow,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
@@ -181,6 +185,10 @@ public class TaskTestApplication {
         flf.getCentralUnit().getMixer().getWaterTank().takeOut(1875); //10%
         assertEquals(1249,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.red,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
+
+
+        //foam led
+        assertEquals(ColourType.off,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());
         flf.getCentralUnit().getMixer().getFoamTank().takeOut(1251  ); //50%
         assertEquals(1249,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         assertEquals(ColourType.yellow,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());
