@@ -12,27 +12,7 @@ import java.net.URLClassLoader;
 
 public class MixDeviceCommunicator {
     private Object mixDevice;
-    public void defill(int amount) {
-        try {
-            Method method = mixDevice.getClass().getDeclaredMethod("defill",Integer.class);
-            method.invoke(method, amount);
-        } catch (NoSuchMethodException ne) {
-            throw new RuntimeException();
-        } catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
 
-    public void setToNextMix() {
-        try {
-            Method method = mixDevice.getClass().getDeclaredMethod("setToNextMix");
-            method.invoke(method);
-        } catch (NoSuchMethodException ne) {
-            throw new RuntimeException();
-        } catch (InvocationTargetException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
     public MixDeviceCommunicator(WaterTank water, FoamTank foam) {
             try {
                 ProcessBuilder processBuilder = new ProcessBuilder("C:\\Program Files\\Java\\jdk-17.0.2\\bin\\jarsigner", "-verify", "jar/Configuration.jar");
@@ -51,22 +31,42 @@ public class MixDeviceCommunicator {
                     }
                 }
                 if (!isComponentAccepted){
-                    throw new RuntimeException();
+                    //TODO: Throw exception and verify configurtation jar
                 }
                 URL[] urls = {new File("jar\\Configuration.jar").toURI().toURL()};
                 URLClassLoader load = new URLClassLoader(urls,MixDeviceCommunicator.class.getClassLoader());
-
-            } catch (IOException | InterruptedException e) {
+                Class mixdevice = Class.forName("MixDevice",true,load);
+                Method method = mixdevice.getDeclaredMethod("getInstance",Object.class,Object.class);
+                this.mixDevice = method.invoke(null,water,foam);
+            } catch (Exception e) {
                 e.printStackTrace();
                 throw new RuntimeException();
             }
+    }
+    public void defill(int amount) {
+        try {
+            Method method = mixDevice.getClass().getDeclaredMethod("defill",Integer.class);
+            method.invoke(this.mixDevice, amount);
+        } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
+            e.printStackTrace();
         }
+    }
 
+    public void setToNextMix() {
+        try {
+            Method method = mixDevice.getClass().getDeclaredMethod("setToNextMix");
+            method.invoke(this.mixDevice);
+        } catch (NoSuchMethodException ne) {
+            throw new RuntimeException();
+        } catch (InvocationTargetException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
     public WaterTank getWaterTank() {
         try {
-            Method method = mixDevice.getClass().getDeclaredMethod("getWaterTank");
-            Object returnValue =method.invoke(method);
-            return (WaterTank) returnValue;
+            System.out.println(this.mixDevice);
+            Method method = this.mixDevice.getClass().getDeclaredMethod("getWaterTank");
+            return (WaterTank) method.invoke(this.mixDevice);
         } catch (NoSuchMethodException ne) {
             throw new RuntimeException();
         } catch (InvocationTargetException | IllegalAccessException e) {
@@ -76,8 +76,8 @@ public class MixDeviceCommunicator {
     }
     public FoamTank getFoamTank() {
         try {
-            Method method = mixDevice.getClass().getDeclaredMethod("getFoamTank");
-            Object returnValue =method.invoke(method);
+            Method method = mixDevice.getClass().getMethod("getFoamTank");
+            Object returnValue =method.invoke(this.mixDevice);
             return (FoamTank) returnValue;
         } catch (NoSuchMethodException ne) {
             throw new RuntimeException();

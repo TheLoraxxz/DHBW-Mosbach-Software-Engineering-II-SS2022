@@ -1,3 +1,4 @@
 rootProject.name = 'Software Engineering II'
 include 'test'
+include 'Components.jar'
 

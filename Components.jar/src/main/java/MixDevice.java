@@ -1,12 +1,13 @@
-package task_01_Components;
 import java.lang.reflect.Method;
+import java.util.Objects;
 
 public class MixDevice {
     private int mixType;
     private Object water;
     private Object foam;
+    private static MixDevice device;
 
-    public MixDevice(Object water,Object foam) {
+    public MixDevice(Object water, Object foam) {
         this.mixType = 0;
         this.water = water;
         this.foam = foam;
@@ -31,6 +32,9 @@ public class MixDevice {
             case 5 -> this.mixType = 10;
             case 10 -> this.mixType = 0;
         }
+    }
+    public static MixDevice getInstance(Object water,Object foam) {
+        return Objects.requireNonNullElseGet(MixDevice.device, () -> new MixDevice(water, foam));
     }
     public Object getWaterTank() {
         return this.water;
