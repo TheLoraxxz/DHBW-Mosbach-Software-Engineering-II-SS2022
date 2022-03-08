@@ -49,7 +49,10 @@ public class Operator extends FLFOperator {
     public void pressSwitch(SwitchType switchType) {
         if (this.operatorSection != null) {
             if (switchType == SwitchType.electroMotor) {
+                System.out.println("press Switch");
                 this.operatorSection.getPanel().getMotorSwitch().press();
+
+
             } else if (switchType == SwitchType.groundSprayNozzles) {
                this.operatorSection.getPanel().getNozzleSwitch().press();
             } else {

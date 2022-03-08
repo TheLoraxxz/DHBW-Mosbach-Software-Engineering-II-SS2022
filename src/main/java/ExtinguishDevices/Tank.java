@@ -87,6 +87,7 @@ public abstract class Tank {
     }
 
     public void setColourLED(int cap,int maxcap) {
+        //System.out.println(cap);
         if (cap*2<maxcap) {
             if (cap*10<maxcap) {
                 this.sensor.lessThan10();

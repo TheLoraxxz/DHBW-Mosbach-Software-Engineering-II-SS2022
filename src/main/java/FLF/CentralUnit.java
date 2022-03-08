@@ -172,6 +172,7 @@ public class CentralUnit {
     }
 
     public void changeMotorState() {
+        System.out.println("Event Test central unit");
         eventBus.post(new MotorEvent());
     }
     public void changeGroundNozzleSpraysState() {

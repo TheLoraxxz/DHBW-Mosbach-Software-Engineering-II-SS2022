@@ -12,12 +12,12 @@ public class ColourLEDWater extends LED implements ISensorObserver {
 
     public ColourLEDWater() {
         super();
-        this.colType = null;
+        this.colType = ColourType.off;
         this.setOn(false);
     }
 
     @Override
     public void showColour(ColourType color) {
-
+        this.colType = color;
     }
 }

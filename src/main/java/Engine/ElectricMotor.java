@@ -20,6 +20,7 @@ public class ElectricMotor extends Subscriber {
     }
 
     public void setOn(boolean on) {
+        System.out.println("Test Electric Seton");
         if(on) {
             box.turnOn();
         } else {
@@ -34,6 +35,7 @@ public class ElectricMotor extends Subscriber {
 
     @Subscribe
     public void recieve(MotorEvent event) {
+        System.out.println("Recieve test");
         setOn(!isOn());
     }
 }

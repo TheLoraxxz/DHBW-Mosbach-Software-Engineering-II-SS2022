@@ -2,6 +2,11 @@ package task_03_Composite;
 
 public abstract class Battery {
     protected Battery parentCell;
+
+    public Battery[] getSubcells() {
+        return subcells;
+    }
+
     protected Battery[] subcells;
 
     public void charge(int amount) {
@@ -38,4 +43,6 @@ public abstract class Battery {
         }
         return cap;
     }
+
+
 }

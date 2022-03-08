@@ -33,8 +33,7 @@ public class RFIDChip {
         ID = strategy.doEncrypt(ID);
     }
 
-    public void decrypt()
-    {
+    public void decrypt() throws Exception {
         ID = strategy.doDecrypt(ID);
     }
 }

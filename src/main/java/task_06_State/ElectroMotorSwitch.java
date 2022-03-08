@@ -10,6 +10,13 @@ public class ElectroMotorSwitch extends Switch{
 
     @Override
     public void press() {
-        this.state.switchState(this);
+        System.out.println("test2");
+        if(this.state instanceof OnState)
+        {
+            this.on.execute(this.switchTypeOperation);
+        } else
+        {
+            this.off.execute(this.switchTypeOperation);
+        }
     }
 }
