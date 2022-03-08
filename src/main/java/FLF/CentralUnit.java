@@ -100,9 +100,8 @@ public class CentralUnit {
         this.lights.get(SwitchType.warningLights)[0] = new WarningLight(PositionType.fronlefttop);
         this.lights.get(SwitchType.warningLights)[1] = new WarningLight(PositionType.backrighttop);
         for (SwitchType key:this.lights.keySet()) {
-            for (Lights light:this.lights.get(key)) {
-                eventBus.register(light);
-            }
+            eventBus.register(this.lights.get(key)[0]);
+
         }
 
         //turnseignalLights
@@ -112,13 +111,9 @@ public class CentralUnit {
             new TurnSignalLight(PositionType.backleftbottom),
             new TurnSignalLight(PositionType.backrightbottom)
         };
-        for (TurnSignalLight lighting: this.turnSignalLight) {
-            eventBus.register(lighting);
-        }
+        eventBus.register(this.turnSignalLight[0]);
         this.breakLight = new BreakLight[]{new BreakLight(PositionType.backleftbottom),new BreakLight(PositionType.backrightbottom)};
-        for (BreakLight lighting: this.breakLight) {
-            eventBus.register(lighting);
-        }
+        eventBus.register(this.breakLight[0]);
         // LIghts finished
         ColourLEDFoam ledFoam = new ColourLEDFoam();
         ColourLEDWater ledWater = new ColourLEDWater();
@@ -135,13 +130,10 @@ public class CentralUnit {
             new GroundSprayNozzles(tank1),
             new GroundSprayNozzles(tank1),
             new GroundSprayNozzles(tank1)};
-        for (GroundSprayNozzles nozzles: this.groundSprayNozzles) {
-            eventBus.register(nozzles);
-        }
+        eventBus.register(groundSprayNozzles[0]);
         this.motors = new ElectricMotor[]{new ElectricMotor(box),new ElectricMotor(box)};
-        for (ElectricMotor motor: this.motors) {
-            eventBus.register(motor);
-        }
+        eventBus.register(this.motors[0]);
+
 
         pivotsStatic = new PivotStatic[]{new PivotStatic(), new PivotStatic()};
         pivotsTurnable = new PivotTurnable[]{new PivotTurnable(), new PivotTurnable()};
@@ -156,6 +148,7 @@ public class CentralUnit {
     }
 
     public void changeLightState(SwitchType switchType) {
+        System.out.println("lights are changed");
         switch (switchType) {
             case headLightsFront -> eventBus.post(new HeadLightsFrontEvent());
             case BlueLights -> eventBus.post(new BlueLightsEvent());
@@ -167,13 +160,14 @@ public class CentralUnit {
     }
 
     public void changeMotorState() {
-        System.out.println("Event Test central unit");
+        System.out.println("motor are changed");
         eventBus.post(new MotorEvent());
         //Routinetest
         ITestApplication test = new Testing();
         this.frontCannon.acceptTest(test);
     }
     public void changeGroundNozzleSpraysState() {
+        System.out.println("groundspraynozzle are changed");
         eventBus.post(new GroundSprayNozzlesEvent());
     }
 
