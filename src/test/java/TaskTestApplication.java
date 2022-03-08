@@ -108,7 +108,7 @@ public class TaskTestApplication {
         assertNotEquals("FT-DUS-FLF-5Sam6072",flf.getCabin().getSeats()[1].getOperator().getId_card().getRfidChip().getID());
         flf.getCabin().getSeats()[1].getOperator().getId_card().getRfidChip().decrypt();
         assertEquals("FT-DUS-FLF-5Sam6072",flf.getCabin().getSeats()[1].getOperator().getId_card().getRfidChip().getID());
-        //test DES kommt ein fehler
+        //test DES
         flf.getCabin().getSeats()[1].getOperator().getId_card().getRfidChip().encrypt(Algorithms.DES);
         assertNotEquals("FT-DUS-FLF-5Sam6072",flf.getCabin().getSeats()[1].getOperator().getId_card().getRfidChip().getID());
         flf.getCabin().getSeats()[1].getOperator().getId_card().getRfidChip().decrypt();
@@ -170,31 +170,33 @@ public class TaskTestApplication {
     public void Task08()
     {
         //testet die verschiedenen licht stufen der zwei leds
-        assertEquals(12500,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
-        assertEquals(2500,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
+        assertEquals(101250,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
+        assertEquals(33750,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         flf.getCabin().getSeats()[1].setPerson(new Operator());
 
         //water led
         assertEquals(ColourType.off,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
-        flf.getCentralUnit().getMixer().getWaterTank().takeOut(6251); //50%
-        assertEquals(6249,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
+        flf.getCentralUnit().getMixer().getWaterTank().takeOut(50626); //50%
+        assertEquals(50624,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.yellow,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
-        flf.getCentralUnit().getMixer().getWaterTank().takeOut(3125); //25%
-        assertEquals(3124,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
+        flf.getCentralUnit().getMixer().getWaterTank().takeOut(25313); //25%
+        assertEquals(25311,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.orange,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
-        flf.getCentralUnit().getMixer().getWaterTank().takeOut(1875); //10%
-        assertEquals(1249,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
+        flf.getCentralUnit().getMixer().getWaterTank().takeOut(20000); //10%
+        assertEquals(5311,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.red,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
 
 
         //foam led
         assertEquals(ColourType.off,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());
-        flf.getCentralUnit().getMixer().getFoamTank().takeOut(1251  ); //50%
-        assertEquals(1249,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
+        flf.getCentralUnit().getMixer().getFoamTank().takeOut(16876); //50%
+        assertEquals(16874,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         assertEquals(ColourType.yellow,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());
-        flf.getCentralUnit().getMixer().getFoamTank().takeOut(625); //25%
+        flf.getCentralUnit().getMixer().getFoamTank().takeOut(8437); //25%
+        assertEquals(8437,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         assertEquals(ColourType.orange,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());
-        flf.getCentralUnit().getMixer().getFoamTank().takeOut(375); //10%
+        flf.getCentralUnit().getMixer().getFoamTank().takeOut(5063); //10%
+        assertEquals(3374,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         assertEquals(ColourType.red,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());
     }
 

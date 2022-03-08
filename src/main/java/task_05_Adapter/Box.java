@@ -31,8 +31,10 @@ public class Box {
     }
 
     public boolean takeOut(double amount) {
+        System.out.println(amount);
         for (Battery battery : batteries) {
             double cap =battery.getCapacity();
+            System.out.println(cap);
             if(cap-amount>0) {
                 cap = cap-amount/4;
                 battery.takeOut((int)cap);
