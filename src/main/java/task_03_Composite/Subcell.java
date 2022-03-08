@@ -1,10 +1,10 @@
 package task_03_Composite;
 
-public class Subcell extends Battery2{
+public class Subcell extends Battery {
 
     public Subcell(MainCell main) {
         this.parentCell = main;
-        this.subcells = new Battery2[10];
+        this.subcells = new Cell[10];
         for (int i =0;i<10;++i) {
             this.subcells[i] = new Cell(this);
         }
@@ -12,7 +12,7 @@ public class Subcell extends Battery2{
 
     @Override
     public void charge(int amount) {
-        for (Battery2 bat:subcells) {
+        for (Battery bat:subcells) {
             if (amount>0) {
                 --amount;
                 bat.charge(1);
@@ -24,7 +24,7 @@ public class Subcell extends Battery2{
 
     @Override
     public void takeOut(int amount) {
-        for (Battery2 bat:subcells) {
+        for (Battery bat:subcells) {
             if (amount>0) {
                 --amount;
                 bat.takeOut(1);

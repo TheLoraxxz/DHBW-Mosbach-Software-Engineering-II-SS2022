@@ -4,6 +4,10 @@ import Lights.LED;
 
 public class ColourLEDFoam extends LED implements ISensorObserver{
 
+    public ColourType getColType() {
+        return colType;
+    }
+
     private ColourType colType;
 
     @Override
