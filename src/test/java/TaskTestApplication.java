@@ -41,7 +41,7 @@ public class TaskTestApplication {
         flf.getCabin().getSeats()[1].setPerson(new Operator());
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.electroMotor);
         for (int i = 0; i < 2; i++) {
-            //assertTrue(flf.getCentralUnit().getMotors()[i].isOn());
+            assertTrue(flf.getCentralUnit().getMotors()[i].isOn());
         }
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.electroMotor);
         for (int i = 0; i < 2; i++) {
@@ -125,6 +125,8 @@ public class TaskTestApplication {
     public void Task05()
     {
         //something went wrong will check later
+
+        //take läst den angegeben wert übrig sol das so sein ??
         //test lade funktion
         assertEquals(400000,flf.getBatteries().getCapacityAll());
         flf.getBatteries().takeOut(1000);
