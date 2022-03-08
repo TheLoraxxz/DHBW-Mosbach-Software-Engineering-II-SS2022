@@ -1,4 +1,5 @@
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class MixDevice {
@@ -16,10 +17,11 @@ public class MixDevice {
         try {
         double foamV = amount*((this.mixType)/ 100);
         double waterV = amount-foamV;
-        Method waterTakeout = this.water.getClass().getDeclaredMethod("takeOut",Float.class);
-        waterTakeout.invoke(null,(Float.valueOf((float) waterV)));
-        Method foamTakeout = this.foam.getClass().getDeclaredMethod("takeOut",Float.class);
-        foamTakeout.invoke(null,(Float.valueOf((float) foamV)));
+
+        Method waterTakeout = this.water.getClass().getSuperclass().getDeclaredMethod("takeOut",float.class);
+        waterTakeout.invoke(this.water,((float) waterV));
+        Method foamTakeout = this.foam.getClass().getSuperclass().getDeclaredMethod("takeOut",float.class);
+        foamTakeout.invoke(this.water,((float) foamV));
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException();

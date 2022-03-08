@@ -9,6 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.Arrays;
 
 public class MixDeviceCommunicator {
     private Object mixDevice;
@@ -31,7 +32,7 @@ public class MixDeviceCommunicator {
                     }
                 }
                 if (!isComponentAccepted){
-                    //TODO: Throw exception and verify configurtation jar
+                    throw new RuntimeException();
                 }
                 URL[] urls = {new File("jar\\Configuration.jar").toURI().toURL()};
                 URLClassLoader load = new URLClassLoader(urls,MixDeviceCommunicator.class.getClassLoader());
@@ -45,7 +46,7 @@ public class MixDeviceCommunicator {
     }
     public void defill(int amount) {
         try {
-            Method method = mixDevice.getClass().getDeclaredMethod("defill",Integer.class);
+            Method method = mixDevice.getClass().getDeclaredMethod("defill",int.class);
             method.invoke(this.mixDevice, amount);
         } catch (InvocationTargetException | IllegalAccessException | NoSuchMethodException e) {
             e.printStackTrace();
@@ -64,7 +65,6 @@ public class MixDeviceCommunicator {
     }
     public WaterTank getWaterTank() {
         try {
-            System.out.println(this.mixDevice);
             Method method = this.mixDevice.getClass().getDeclaredMethod("getWaterTank");
             return (WaterTank) method.invoke(this.mixDevice);
         } catch (NoSuchMethodException ne) {
