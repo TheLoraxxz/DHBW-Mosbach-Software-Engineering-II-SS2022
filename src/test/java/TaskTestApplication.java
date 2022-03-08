@@ -168,10 +168,10 @@ public class TaskTestApplication {
     public void Task08()
     {
         //Farbe der Led ändert sich nicht
-        assertEquals(12000,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
+        assertEquals(12500,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(2500,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         flf.getCabin().getSeats()[1].setPerson(new Operator());
-        flf.getCentralUnit().getMixer().getWaterTank().takeOut(5750); //50%
+        flf.getCentralUnit().getMixer().getWaterTank().takeOut(6250); //50%
         assertEquals(6250,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.yellow,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
         flf.getCentralUnit().getMixer().getWaterTank().takeOut(3125); //25%
@@ -195,7 +195,6 @@ public class TaskTestApplication {
         flf.getCabin().getSeats()[1].setPerson(new Operator());
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.electroMotor);
         assertNotEquals(12500,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
-        assertNotEquals(2500,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
     }
 
     public void CheckLED(boolean checkValue)

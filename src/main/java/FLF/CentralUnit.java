@@ -153,11 +153,6 @@ public class CentralUnit {
             driverSection = new DriverSection(this.turnSignalLight,pivotsTurnable,this.motors,frontCannon,breakLight,joystick);
             operatorSection = new OperatorSection(frontCannon, headCannon,joystick,this,ledFoam,ledWater);
         }
-
-
-        //Routinetest
-        ITestApplication test = new Testing();
-        this.frontCannon.acceptTest(test);
     }
 
     public void changeLightState(SwitchType switchType) {
@@ -174,6 +169,9 @@ public class CentralUnit {
     public void changeMotorState() {
         System.out.println("Event Test central unit");
         eventBus.post(new MotorEvent());
+        //Routinetest
+        ITestApplication test = new Testing();
+        this.frontCannon.acceptTest(test);
     }
     public void changeGroundNozzleSpraysState() {
         eventBus.post(new GroundSprayNozzlesEvent());
