@@ -169,19 +169,20 @@ public class TaskTestApplication {
     @Order(8)
     public void Task08()
     {
-        //Farbe der Led ändert sich nicht
         assertEquals(12500,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(2500,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         flf.getCabin().getSeats()[1].setPerson(new Operator());
-        flf.getCentralUnit().getMixer().getWaterTank().takeOut(6250); //50%
-        assertEquals(6250,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
+        flf.getCentralUnit().getMixer().getWaterTank().takeOut(6251); //50%
+        assertEquals(6249,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.yellow,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
         flf.getCentralUnit().getMixer().getWaterTank().takeOut(3125); //25%
+        assertEquals(3124,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.orange,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
         flf.getCentralUnit().getMixer().getWaterTank().takeOut(1875); //10%
+        assertEquals(1249,flf.getCentralUnit().getMixer().getWaterTank().getCapacity());
         assertEquals(ColourType.red,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedWater().getColType());
-
-        flf.getCentralUnit().getMixer().getFoamTank().takeOut(1250  ); //50%
+        flf.getCentralUnit().getMixer().getFoamTank().takeOut(1251  ); //50%
+        assertEquals(1249,flf.getCentralUnit().getMixer().getFoamTank().getCapacity());
         assertEquals(ColourType.yellow,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());
         flf.getCentralUnit().getMixer().getFoamTank().takeOut(625); //25%
         assertEquals(ColourType.orange,flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getLedFoam().getColType());

@@ -10,7 +10,7 @@ public class Sensor {
     }
 
     public void moreThan50() {
-        led.showColour(null);
+        led.showColour(ColourType.off);
     }
 
     public void lessThan50() {

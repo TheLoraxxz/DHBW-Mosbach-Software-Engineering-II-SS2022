@@ -4,6 +4,12 @@ import Lights.LED;
 
 public class ColourLEDFoam extends LED implements ISensorObserver{
 
+    public ColourLEDFoam() {
+        super();
+        this.colType = ColourType.off;
+        this.setOn(false);
+    }
+
     public ColourType getColType() {
         return colType;
     }
@@ -12,6 +18,6 @@ public class ColourLEDFoam extends LED implements ISensorObserver{
 
     @Override
     public void showColour(ColourType color) {
-
+        this.colType = color;
     }
 }

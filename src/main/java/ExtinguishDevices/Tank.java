@@ -43,7 +43,7 @@ public abstract class Tank {
     public float takeOut(float foamV) {
         int amount = (int) foamV;
         int cap = this.getCapacity();
-        setColourLED(cap+amount,this.capacity.length*this.capacity[0].length*this.capacity[0][0].length);
+        setColourLED(cap-amount,this.capacity.length*this.capacity[0].length*this.capacity[0][0].length);
         for(int i=0;i<this.capacity.length;i++) {
             for(int j=0;j<this.capacity[0].length;j++) {
                 for(int k=0;k<this.capacity[0][0].length;k++) {
@@ -87,7 +87,6 @@ public abstract class Tank {
     }
 
     public void setColourLED(int cap,int maxcap) {
-        //System.out.println(cap);
         if (cap*2<maxcap) {
             if (cap*10<maxcap) {
                 this.sensor.lessThan10();
