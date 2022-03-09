@@ -9,8 +9,8 @@ public enum SwitchType {
     headLightsRoof(4),
     SideLights(1),
     BlueLights(0);
-    private int value;
-    private SwitchType(int value) {
+    private final int value;
+    SwitchType(int value) {
         this.value = value;
     }
     public int getValue() {

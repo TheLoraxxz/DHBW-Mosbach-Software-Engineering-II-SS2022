@@ -7,7 +7,7 @@ import ExtinguishDevices.WaterTank;
 import task_01_Components.MixDeviceCommunicator;
 
 public interface ITestApplication {
-    public boolean routine(GroundSprayNozzles type, WaterTank tank);
-    public boolean routine(FrontCannon type, MixDeviceCommunicator device);
-    public boolean routine(HeadCannon type, MixDeviceCommunicator device);
+    boolean routine(GroundSprayNozzles type, WaterTank tank);
+    boolean routine(FrontCannon type, MixDeviceCommunicator device);
+    boolean routine(HeadCannon type, MixDeviceCommunicator device);
 }

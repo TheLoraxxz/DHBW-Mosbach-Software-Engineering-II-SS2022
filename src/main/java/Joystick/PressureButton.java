@@ -8,7 +8,7 @@ import FLF.PositionType;
 
 public class PressureButton implements IFeeler {
 
-    private PositionType position;
+    private final PositionType position;
 
     protected Cannon cannon;
 

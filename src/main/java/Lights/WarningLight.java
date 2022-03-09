@@ -5,7 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import task_02_SOA.WarningLightsEvent;
 
 public class WarningLight extends Lights{
-    private LED[] led;
+    private final LED[] led;
     public WarningLight(PositionType pos) {
         super();
         this.position = pos;

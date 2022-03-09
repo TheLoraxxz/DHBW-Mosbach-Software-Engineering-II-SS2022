@@ -6,9 +6,9 @@ import Person.FLFOperator;
 
 public class BusDoor {
     private boolean isOpen,isUnlocked;
-    private PositionType position;
-    private DoorFeeler[] doorFeelers;
-    private ReceiverModule receiverModule;
+    private final PositionType position;
+    private final DoorFeeler[] doorFeelers;
+    private final ReceiverModule receiverModule;
 
     public BusDoor(PositionType position, Seat[] seats, CentralUnit cUnit) {
         this.position = position;

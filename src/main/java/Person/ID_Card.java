@@ -9,7 +9,7 @@ public class ID_Card {
         return rfidChip;
     }
 
-    private RFIDChip rfidChip;
+    private final RFIDChip rfidChip;
 
     public ID_Card(String name, int code) {
         rfidChip = new RFIDChip("FT-DUS-FLF-5" + name + code);

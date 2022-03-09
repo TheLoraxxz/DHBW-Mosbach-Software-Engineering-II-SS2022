@@ -1,8 +1,8 @@
 package ExtinguishDevices;
 
 public class Segments {
-    private boolean canTilt;
-    private PartSegments[] partSegments;
+    private final boolean canTilt;
+    private final PartSegments[] partSegments;
     private float tiltDegree;
     public Segments(boolean canTilt) {
         this.tiltDegree = 0;

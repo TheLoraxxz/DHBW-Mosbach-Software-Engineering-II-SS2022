@@ -6,7 +6,7 @@ import task_09_visitor.Cannon;
 import task_09_visitor.ITestApplication;
 
 public class GroundSprayNozzles extends Cannon {
-    private WaterTank waterTank;
+    private final WaterTank waterTank;
     public GroundSprayNozzles(WaterTank tank) {
         super();
         this.waterTank = tank;

@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class MixDevice {
     private int mixType;
-    private Object water;
-    private Object foam;
+    private final Object water;
+    private final Object foam;
     private static MixDevice device;
 
     public MixDevice(Object water, Object foam) {

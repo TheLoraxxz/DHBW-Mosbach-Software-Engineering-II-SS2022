@@ -5,8 +5,8 @@ import Engine.Pivot;
 
 public class GasPedal implements IPedal{
 
-    private Pivot pivot;
-    private ElectricMotor[] motors;
+    private final Pivot pivot;
+    private final ElectricMotor[] motors;
 
     public GasPedal(Pivot pivot, ElectricMotor[] motors) {
         this.motors = motors;

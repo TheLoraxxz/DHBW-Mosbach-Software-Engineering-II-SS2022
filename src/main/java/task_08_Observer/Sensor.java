@@ -3,7 +3,7 @@ package task_08_Observer;
 import java.util.ArrayList;
 
 public class Sensor {
-    private ISensorObserver led;
+    private final ISensorObserver led;
 
     public Sensor(ISensorObserver led) {
         this.led = led;

@@ -9,9 +9,9 @@ import Person.Operator;
 import Person.Person;
 
 public class Seat {
-    private PositionType position;
+    private final PositionType position;
     private Person person;
-    private Respirators respirators;
+    private final Respirators respirators;
 
     private OperatorSection operator;
     private DriverSection driver;

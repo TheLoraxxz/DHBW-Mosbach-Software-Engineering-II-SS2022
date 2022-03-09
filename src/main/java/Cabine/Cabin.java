@@ -25,24 +25,24 @@ public class Cabin {
         return busDoors;
     }
 
-    private BusDoor[] busDoors;
+    private final BusDoor[] busDoors;
 
     public Seat[] getSeats() {
         return seats;
     }
 
-    private Seat[] seats;
+    private final Seat[] seats;
 
     public EnergyDisplay getEnergyDisplay() {
         return energyDisplay;
     }
 
-    private EnergyDisplay energyDisplay;
+    private final EnergyDisplay energyDisplay;
 
     public SpeedDisplay getSpeedDisplay() {
         return speedDisplay;
     }
 
-    private SpeedDisplay speedDisplay;
+    private final SpeedDisplay speedDisplay;
 
 }

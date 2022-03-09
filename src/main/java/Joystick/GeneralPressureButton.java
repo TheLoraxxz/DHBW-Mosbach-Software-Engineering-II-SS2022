@@ -5,8 +5,8 @@ import ExtinguishDevices.HeadCannon;
 import FLF.PositionType;
 
 public class GeneralPressureButton extends PressureButton implements ISpecialFeeler {
-    private FrontCannon front;
-    private JoystickStateClass state;
+    private final FrontCannon front;
+    private final JoystickStateClass state;
     public GeneralPressureButton(HeadCannon head,FrontCannon front,JoystickStateClass state) {
         super(PositionType.frontop, head);
         this.front = front;

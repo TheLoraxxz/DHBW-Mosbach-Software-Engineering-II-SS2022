@@ -5,7 +5,7 @@ import ExtinguishDevices.KnopRoofStepsType;
 
 public class KnobRoofWaterCanon {
 
-    private HeadCannon canon;
+    private final HeadCannon canon;
 
     KnobRoofWaterCanon(HeadCannon canon) {
         this.canon = canon;

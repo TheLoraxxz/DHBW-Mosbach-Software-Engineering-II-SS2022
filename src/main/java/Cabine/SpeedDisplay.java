@@ -3,7 +3,7 @@ package Cabine;
 import Engine.Pivot;
 
 public class SpeedDisplay implements IDisplay{
-    private Pivot pivot;
+    private final Pivot pivot;
     public SpeedDisplay(Pivot pivot) {
         this.pivot = pivot;
     }

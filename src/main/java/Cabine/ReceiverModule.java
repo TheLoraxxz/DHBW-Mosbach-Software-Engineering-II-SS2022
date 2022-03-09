@@ -3,7 +3,7 @@ package Cabine;
 import FLF.CentralUnit;
 
 public class ReceiverModule {
-    private CentralUnit centralUnit;
+    private final CentralUnit centralUnit;
 
     public ReceiverModule(CentralUnit pCentralUnit) {
         centralUnit = pCentralUnit;

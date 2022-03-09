@@ -24,33 +24,33 @@ public class ControlPanel {
         return switches;
     }
 
-    private LightSwitch[] switches;
+    private final LightSwitch[] switches;
 
     public ElectroMotorSwitch getMotorSwitch() {
         return motorSwitch;
     }
 
-    private ElectroMotorSwitch motorSwitch;
+    private final ElectroMotorSwitch motorSwitch;
 
     public KnobFrontWaterCanon getKnobFront() {
         return knobFront;
     }
 
-    private GroundNozzleSwitch nozzleSwitch;
+    private final GroundNozzleSwitch nozzleSwitch;
 
     public GroundNozzleSwitch getNozzleSwitch() {
         return nozzleSwitch;
     }
 
-    private KnobFrontWaterCanon knobFront;
+    private final KnobFrontWaterCanon knobFront;
 
     public KnobRoofWaterCanon getKnobRoof() {
         return knobRoof;
     }
 
-    private KnobRoofWaterCanon knobRoof;
-    private ColourLEDFoam ledFoam;
-    private ColourLEDWater ledWater;
+    private final KnobRoofWaterCanon knobRoof;
+    private final ColourLEDFoam ledFoam;
+    private final ColourLEDWater ledWater;
 
     ControlPanel(FrontCannon front, HeadCannon head, CentralUnit unit, ColourLEDFoam foam, ColourLEDWater water) {
         this.ledFoam = foam;

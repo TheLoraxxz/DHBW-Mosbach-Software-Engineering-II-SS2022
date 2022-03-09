@@ -144,9 +144,13 @@ public class TaskTestApplication {
     {
         flf.getCabin().getSeats()[1].setPerson(new Operator());
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.electroMotor);
-        assertTrue(flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getMotorSwitch().getState());
+        for (int i = 0; i < 2; i++) {
+            assertTrue(flf.getCentralUnit().getMotors()[i].isOn());
+        }
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.electroMotor);
-        assertFalse(flf.getCabin().getSeats()[1].getOperator().getOperatorSection().getPanel().getMotorSwitch().getState());
+        for (int i = 0; i < 2; i++) {
+            assertFalse(flf.getCentralUnit().getMotors()[i].isOn());
+        }
     }
 
     @Test

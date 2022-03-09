@@ -7,7 +7,7 @@ import task_05_Adapter.Box;
 import FLF.Status;
 
 public class ElectricMotor extends Subscriber {
-    private Box box;
+    private final Box box;
     
     public ElectricMotor(Box box) {
         this.box = box;

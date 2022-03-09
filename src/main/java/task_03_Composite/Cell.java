@@ -9,20 +9,12 @@ public class Cell extends Battery {
 
     @Override
     public void charge(int amount) {
-        if (amount==1) {
-            this.isEmpty=false;
-        } else {
-            this.isEmpty = true;
-        }
+        this.isEmpty= amount != 1;
     }
 
     @Override
     public void takeOut(int amount) {
-        if (amount==1) {
-            this.isEmpty=true;
-        } else {
-            this.isEmpty=false;
-        }
+        this.isEmpty= amount == 1;
     }
 
     @Override

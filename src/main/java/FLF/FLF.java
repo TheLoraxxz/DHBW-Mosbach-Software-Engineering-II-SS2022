@@ -5,9 +5,9 @@ import Cabine.Cabin;
 
 public class FLF {
 
-    private CentralUnit centralUnit;
-    private Cabin cabin;
-    private Box box;
+    private final CentralUnit centralUnit;
+    private final Cabin cabin;
+    private final Box box;
 
     public Cabin getCabin() {
         return cabin;
@@ -30,9 +30,9 @@ public class FLF {
     }
 
     public static class Builder{
-        private Cabin cabin;
-        private CentralUnit centralUnit;
-        private Batterymanagement batteries;
+        private final Cabin cabin;
+        private final CentralUnit centralUnit;
+        private final Batterymanagement batteries;
         private static JoystickType types = JoystickType.seperate;
         public Builder() {
             batteries = Batterymanagement.instance;

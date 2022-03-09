@@ -26,37 +26,38 @@ import task_09_visitor.Testing;
 import java.util.HashMap;
 
 public class CentralUnit {
-    private HashMap<SwitchType, Lights[]> lights;
-    private String Identifier = "DUS | FLF-5", Code = "6072";
-    private String[] associatedPersonel;
+    private final HashMap<SwitchType, Lights[]> lights;
+    private final String Identifier = "DUS | FLF-5";
+    private final String Code = "6072";
+    private final String[] associatedPersonel;
     public ElectricMotor[] getMotors() {
         return motors;
     }
 
-    private ElectricMotor[] motors;
+    private final ElectricMotor[] motors;
 
-    private BreakLight breakLight[];
-    private TurnSignalLight turnSignalLight[];
+    private final BreakLight[] breakLight;
+    private final TurnSignalLight[] turnSignalLight;
 
-    private PivotTurnable[] pivotsTurnable;
-    private PivotStatic[] pivotsStatic;
+    private final PivotTurnable[] pivotsTurnable;
+    private final PivotStatic[] pivotsStatic;
 
     public MixDeviceCommunicator getMixer() {
         return mixer;
     }
 
-    private MixDeviceCommunicator mixer;
-    private FrontCannon frontCannon;
-    private HeadCannon headCannon;
+    private final MixDeviceCommunicator mixer;
+    private final FrontCannon frontCannon;
+    private final HeadCannon headCannon;
 
-    private OperatorSection operatorSection;
-    private DriverSection driverSection;
+    private final OperatorSection operatorSection;
+    private final DriverSection driverSection;
 
-    private EventBus eventBus;
+    private final EventBus eventBus;
 
 
 
-    private GroundSprayNozzles[] groundSprayNozzles;
+    private final GroundSprayNozzles[] groundSprayNozzles;
     public CentralUnit(Box box, JoystickType type) {
         this.eventBus = new EventBus();
         associatedPersonel = new String[]{"Red Adair", "Sam"};
@@ -149,7 +150,6 @@ public class CentralUnit {
     }
 
     public void changeLightState(SwitchType switchType) {
-        System.out.println("lights are changed");
         switch (switchType) {
             case headLightsFront -> eventBus.post(new HeadLightsFrontEvent());
             case BlueLights -> eventBus.post(new BlueLightsEvent());
@@ -185,23 +185,23 @@ public class CentralUnit {
     }
 
     public Lights[] getWarningLights() {
-        return (Lights[]) this.lights.get(SwitchType.warningLights);
+        return this.lights.get(SwitchType.warningLights);
     }
 
     public Lights[] getHeadFrontLights() {
-        return (Lights[]) this.lights.get(SwitchType.headLightsFront);
+        return this.lights.get(SwitchType.headLightsFront);
     }
 
     public Lights[] getHeadRoofLights() {
-        return (Lights[]) this.lights.get(SwitchType.headLightsRoof);
+        return this.lights.get(SwitchType.headLightsRoof);
     }
 
     public Lights[] getBlueLights() {
-        return (Lights[]) this.lights.get(SwitchType.BlueLights);
+        return this.lights.get(SwitchType.BlueLights);
     }
 
     public Lights[] getSideLights() {
-        return (Lights[]) this.lights.get(SwitchType.SideLights);
+        return this.lights.get(SwitchType.SideLights);
     }
 
     public TurnSignalLight[] getTurnSignalLights() {
@@ -233,8 +233,6 @@ public class CentralUnit {
 
     public boolean CheckIDCode(String IDCode)
     {
-        if(IDCode == Identifier+associatedPersonel[1]+Code || IDCode == Identifier+associatedPersonel[2]+Code)
-        return true;
-        return false;
+        return IDCode == Identifier + associatedPersonel[1] + Code || IDCode == Identifier + associatedPersonel[2] + Code;
     }
 }

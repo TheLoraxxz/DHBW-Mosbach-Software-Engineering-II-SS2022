@@ -5,9 +5,9 @@ import Engine.Pivot;
 import Lights.BreakLight;
 
 public class BreakPedal implements IPedal{
-    private Pivot pivot;
-    private ElectricMotor[] motors;
-    private BreakLight[] lights;
+    private final Pivot pivot;
+    private final ElectricMotor[] motors;
+    private final BreakLight[] lights;
     public BreakPedal(Pivot pivot, ElectricMotor[] motors,BreakLight[] lights) {
         this.pivot = pivot;
         this.motors = motors;

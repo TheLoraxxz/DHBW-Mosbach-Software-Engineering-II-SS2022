@@ -9,7 +9,7 @@ public class FrontCannon extends Cannon {
     private FrontWaterStepsType steps;
 
     private float tiltDegree;
-    private MixDeviceCommunicator mixDevice;
+    private final MixDeviceCommunicator mixDevice;
     public FrontCannon(MixDeviceCommunicator mixer) {
         this.tiltDegree = 0;
         this.steps = FrontWaterStepsType.one;

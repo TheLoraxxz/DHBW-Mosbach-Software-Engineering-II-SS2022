@@ -5,7 +5,7 @@ import com.google.common.eventbus.Subscribe;
 import task_02_SOA.BlueLightsEvent;
 
 public class BlueLight extends Lights{
-    private LED[] leds;
+    private final LED[] leds;
 
     public BlueLight(PositionType pos, int ledNumber) {
         super();

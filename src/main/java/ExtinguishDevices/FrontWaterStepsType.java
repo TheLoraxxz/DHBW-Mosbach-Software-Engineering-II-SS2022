@@ -10,8 +10,8 @@ public enum FrontWaterStepsType {
     five(2500),
     six(3000),
     seven(3500);
-    private int value;
-    private FrontWaterStepsType(int value) {
+    private final int value;
+    FrontWaterStepsType(int value) {
         this.value = value;
     }
     public int getValue() {

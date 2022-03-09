@@ -22,7 +22,7 @@ public class OperatorSection {
         }
     }
 
-    private ControlPanel panel;
+    private final ControlPanel panel;
     private JoystickHeadCanon joystick;
     private GeneralJoystick gJoystick;
     private Operator operator;

@@ -12,7 +12,7 @@ import java.net.URLClassLoader;
 import java.util.Arrays;
 
 public class MixDeviceCommunicator {
-    private Object mixDevice;
+    private final Object mixDevice;
 
     public MixDeviceCommunicator(WaterTank water, FoamTank foam) {
             try {

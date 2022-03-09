@@ -6,13 +6,13 @@ public abstract class Pivot {
         return breakDisks;
     }
 
-    private BreakDisk[] breakDisks;
+    private final BreakDisk[] breakDisks;
 
     public Wheel[] getWheels() {
         return wheels;
     }
 
-    private Wheel[] wheels;
+    private final Wheel[] wheels;
 
 
     public Pivot() {

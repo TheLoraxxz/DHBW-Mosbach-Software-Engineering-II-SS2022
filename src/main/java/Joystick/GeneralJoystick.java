@@ -5,7 +5,7 @@ import ExtinguishDevices.FrontCannon;
 import ExtinguishDevices.HeadCannon;
 
 public class GeneralJoystick extends Joystick {
-    private JoystickStateClass state;
+    private final JoystickStateClass state;
     private FrontCannon front;
     private HeadCannon head;
     public GeneralJoystick(FrontCannon front, HeadCannon head) {

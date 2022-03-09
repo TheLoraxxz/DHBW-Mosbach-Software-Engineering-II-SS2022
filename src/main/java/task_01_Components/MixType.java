@@ -5,8 +5,8 @@ public enum MixType {
     five(5),
     ten(10),
     zero(0);
-    private int value;
-    private MixType(int value) {
+    private final int value;
+    MixType(int value) {
         this.value = value;
     }
     public int getValue() {

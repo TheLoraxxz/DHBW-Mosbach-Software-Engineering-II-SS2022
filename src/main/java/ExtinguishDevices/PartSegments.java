@@ -1,7 +1,7 @@
 package ExtinguishDevices;
 
 public class PartSegments {
-    private int lenght;
+    private final int lenght;
     private int shownLength;
     public PartSegments(int lenght) {
         this.lenght = lenght;

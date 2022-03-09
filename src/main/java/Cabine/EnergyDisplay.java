@@ -4,7 +4,7 @@ import task_05_Adapter.Box;
 
 public class EnergyDisplay implements IDisplay{
 
-    private Box box;
+    private final Box box;
     public EnergyDisplay(Box box) {
         this.box = box;
     }

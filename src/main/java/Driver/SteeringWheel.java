@@ -5,13 +5,13 @@ import FLF.PositionType;
 import Lights.TurnSignalLight;
 
 public class SteeringWheel {
-    private TurnSignalLight[] lights;
+    private final TurnSignalLight[] lights;
 
     public PivotTurnable[] getTurnables() {
         return turnables;
     }
 
-    private PivotTurnable [] turnables;
+    private final PivotTurnable [] turnables;
     public SteeringWheel(TurnSignalLight[] lights,PivotTurnable[] turnables) {
         this.lights = lights;
         this.turnables = turnables;

@@ -8,14 +8,14 @@ import task_09_visitor.ITestApplication;
 public class HeadCannon extends Cannon {
 
     private KnopRoofStepsType steps;
-    private Segments[] segments;
+    private final Segments[] segments;
 
     public boolean isMovedOut() {
         return isMovedOut;
     }
 
     private boolean isMovedOut;
-    private MixDeviceCommunicator mixDevice;
+    private final MixDeviceCommunicator mixDevice;
 
     public HeadCannon(MixDeviceCommunicator mixing) {
         super();

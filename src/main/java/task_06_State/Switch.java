@@ -29,11 +29,7 @@ public abstract class Switch {
         this.state = state;
     }
     public boolean getState() {
-        if (this.state instanceof OffState) {
-            return false;
-        } else {
-            return true;
-        }
+        return !(this.state instanceof OffState);
     }
 
 }

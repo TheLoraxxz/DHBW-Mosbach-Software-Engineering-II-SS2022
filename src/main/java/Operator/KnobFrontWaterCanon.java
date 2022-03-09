@@ -5,7 +5,7 @@ import ExtinguishDevices.FrontWaterStepsType;
 
 public class KnobFrontWaterCanon{
 
-    private FrontCannon canon;
+    private final FrontCannon canon;
 
     KnobFrontWaterCanon(FrontCannon frontCannon) {
             this.canon = frontCannon;

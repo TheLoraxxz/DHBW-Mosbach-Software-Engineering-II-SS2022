@@ -15,5 +15,5 @@ public enum PositionType {
     backleftbottom,
     backrightbottom,
     backlefttop,
-    backrighttop;
+    backrighttop
 }

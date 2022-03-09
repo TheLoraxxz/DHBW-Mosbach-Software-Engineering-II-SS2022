@@ -1,6 +1,7 @@
 package task_04_Strategy;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 public class OperationDES implements IStrategy{
@@ -18,7 +19,7 @@ public class OperationDES implements IStrategy{
     @Override
     public String doEncrypt(String str) throws Exception {
         // Encode the string into bytes using utf-8
-        byte[] utf8 = str.getBytes("UTF8");
+        byte[] utf8 = str.getBytes(StandardCharsets.UTF_8);
 
         // Encrypt
         byte[] enc = ecipher.doFinal(utf8);
@@ -35,7 +36,7 @@ public class OperationDES implements IStrategy{
         byte[] utf8 = dcipher.doFinal(dec);
 
         // Decode using utf-8
-        return new String(utf8, "UTF8");
+        return new String(utf8, StandardCharsets.UTF_8);
     }
 }
 

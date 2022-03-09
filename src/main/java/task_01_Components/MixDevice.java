@@ -3,8 +3,8 @@ import java.lang.reflect.Method;
 
 public class MixDevice {
     private int mixType;
-    private Object water;
-    private Object foam;
+    private final Object water;
+    private final Object foam;
 
     public MixDevice(Object water,Object foam) {
         this.mixType = 0;

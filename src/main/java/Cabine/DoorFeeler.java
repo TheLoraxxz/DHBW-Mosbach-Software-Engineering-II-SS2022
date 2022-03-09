@@ -3,9 +3,9 @@ package Cabine;
 import Person.Person;
 
 public class DoorFeeler implements IDoorFeeler{
-    private BusDoor busDoor;
-    private boolean isInside;
-    private Seat[] seats;
+    private final BusDoor busDoor;
+    private final boolean isInside;
+    private final Seat[] seats;
 
 
     public DoorFeeler(BusDoor busDoor, boolean position, Seat[] seats) {

@@ -6,7 +6,7 @@ import task_03_Composite.Battery;
 
 public class Box {
     private Status batterystatus;
-    private Battery[] batteries;
+    private final Battery[] batteries;
     public Box() {
         this.batteries = new Battery[]{new Batteries(),new Batteries(),new Batteries(),new Batteries()};
         this.batterystatus = Status.idle;

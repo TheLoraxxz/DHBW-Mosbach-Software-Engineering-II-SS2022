@@ -12,10 +12,10 @@ import Person.Driver;
 
 public class DriverSection {
     private Driver driver;
-    private GasPedal gasPedal;
-    private PositionType relativePositionToControlPanel;
-    private SteeringWheel steeringWheel;
-    private BreakPedal breakPedal;
+    private final GasPedal gasPedal;
+    private final PositionType relativePositionToControlPanel;
+    private final SteeringWheel steeringWheel;
+    private final BreakPedal breakPedal;
     private JoystickFrontCannon joystickFrontCannon;
     private GeneralJoystick joystick;
 
