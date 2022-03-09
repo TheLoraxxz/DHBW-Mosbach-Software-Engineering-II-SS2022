@@ -123,7 +123,6 @@ public class TestApplication {
         CheckLED(false);
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.headLightsFront);
         for (int i = 0; i < 2; i++) {
-            System.out.println(i);
             assertTrue(flf.getCentralUnit().getHeadFrontLights()[i].isOn());
         }
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.headLightsFront);

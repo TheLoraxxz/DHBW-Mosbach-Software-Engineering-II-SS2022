@@ -20,7 +20,6 @@ public class ElectricMotor extends Subscriber {
     }
 
     public void setOn(boolean on) {
-        System.out.println("Test Electric Seton");
         if(on) {
             box.turnOn();
         } else {

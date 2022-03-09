@@ -30,7 +30,9 @@ public class GroundSprayNozzles extends Cannon {
 
     @Subscribe
     public void recieve(GroundSprayNozzlesEvent event) {
+        setCannonState(CannonState.throwingExtinguishMedium);
         this.pumpOut();
+        setCannonState(CannonState.inactive);
     }
 
     @Override

@@ -31,17 +31,9 @@ public class Box {
     }
 
     public boolean takeOut(double amount) {
-        System.out.println(amount);
+        int amountPerBat =(int) amount/4;
         for (Battery battery : batteries) {
-            double cap =battery.getCapacity();
-            System.out.println(cap);
-            if(cap-amount>0) {
-                cap = cap-amount/4;
-                battery.takeOut((int)cap);
-            } else {
-                cap = 0;
-                return false;
-            }
+            battery.takeOut(amountPerBat);
         }
         return true;
     }

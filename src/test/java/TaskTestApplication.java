@@ -14,6 +14,8 @@ import task_04_Strategy.Algorithms;
 import task_06_State.SwitchType;
 import task_08_Observer.ColourType;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TaskTestApplication {
@@ -24,6 +26,7 @@ public class TaskTestApplication {
         flf = null;
         flf = new FLF.Builder().build();
     }
+
     @Test
     @Order(1)
     public void Task01()
