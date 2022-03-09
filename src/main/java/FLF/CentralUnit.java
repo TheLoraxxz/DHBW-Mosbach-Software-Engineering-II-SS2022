@@ -100,8 +100,9 @@ public class CentralUnit {
         this.lights.get(SwitchType.warningLights)[0] = new WarningLight(PositionType.fronlefttop);
         this.lights.get(SwitchType.warningLights)[1] = new WarningLight(PositionType.backrighttop);
         for (SwitchType key:this.lights.keySet()) {
-            eventBus.register(this.lights.get(key)[0]);
-
+            for (Lights lights:this.lights.get(key)) {
+                eventBus.register(lights);
+            }
         }
 
         //turnseignalLights
@@ -160,14 +161,12 @@ public class CentralUnit {
     }
 
     public void changeMotorState() {
-        System.out.println("motor are changed");
         eventBus.post(new MotorEvent());
         //Routinetest
         ITestApplication test = new Testing();
         this.frontCannon.acceptTest(test);
     }
     public void changeGroundNozzleSpraysState() {
-        System.out.println("groundspraynozzle are changed");
         eventBus.post(new GroundSprayNozzlesEvent());
     }
 

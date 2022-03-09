@@ -28,18 +28,6 @@ public class TaskTestApplication {
     }
 
     @Test
-    @Order(0)
-    public void test() {
-        Arrays.stream(this.flf.getBatteries().getBatteries()).forEach((batt)->{
-            System.out.println(batt.getCapacity());
-        });
-        this.flf.getBatteries().takeOut(4000);
-        Arrays.stream(this.flf.getBatteries().getBatteries()).forEach((batt)->{
-            System.out.println(batt.getCapacity());
-        });
-    }
-
-    @Test
     @Order(1)
     public void Task01()
     {

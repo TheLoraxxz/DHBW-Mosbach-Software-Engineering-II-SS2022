@@ -45,7 +45,6 @@ public class BlueLight extends Lights{
 
     @Subscribe
     public void recieving(BlueLightsEvent event) {
-        System.out.println("recieve Blueligght");
         if (this.isOn()) {
             off();
         } else {

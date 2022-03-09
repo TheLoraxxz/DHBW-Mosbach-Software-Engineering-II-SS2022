@@ -14,24 +14,11 @@ public class GroundNozzleSwitch extends Switch  {
     @Override
     public void press() {
         this.state.switchState(this);
-    }
-    /*
-    @Override
-    public void on() {
-        for (GroundSprayNozzles groundSprayNozzles : sprayNozzles) {
-            groundSprayNozzles.setCannonState(CannonState.throwingExtinguishMedium);
-            groundSprayNozzles.pumpOut();
+        if(this.state instanceof OnState) {
+            this.on.execute(this.switchTypeOperation);
+        } else {
+            this.off.execute(this.switchTypeOperation);
         }
-        this.on = true;
-        
     }
-
-    @Override
-    public void off() {
-        this.on = false;
-        for (GroundSprayNozzles groundSprayNozzles : sprayNozzles) {
-            groundSprayNozzles.setCannonState(CannonState.inactive);
-        }
-    }*/
     
 }

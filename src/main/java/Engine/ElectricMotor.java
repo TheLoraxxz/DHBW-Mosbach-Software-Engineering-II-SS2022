@@ -29,7 +29,6 @@ public class ElectricMotor extends Subscriber {
     }
 
     public boolean isOn() {
-        System.out.println(box.getStatus());
         return box.getStatus()==Status.use;
     }
 
