@@ -35,7 +35,6 @@ public class ElectricMotor extends Subscriber {
 
     @Subscribe
     public void recieve(MotorEvent event) {
-        System.out.println("Recieve test");
         setOn(!isOn());
     }
 }

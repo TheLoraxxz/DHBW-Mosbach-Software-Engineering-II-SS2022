@@ -104,6 +104,9 @@ public class TestApplication {
     public void usageControlPanel()
     {
         flf.getCabin().getSeats()[1].setPerson(new Operator());
+        assertFalse(flf.getCentralUnit().getMotors()[0].isOn());
+        assertFalse(flf.getCentralUnit().getMotors()[1].isOn());
+
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.electroMotor);
         for (int i = 0; i < 2; i++) {
             assertTrue(flf.getCentralUnit().getMotors()[i].isOn());
@@ -120,6 +123,7 @@ public class TestApplication {
         CheckLED(false);
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.headLightsFront);
         for (int i = 0; i < 2; i++) {
+            System.out.println(i);
             assertTrue(flf.getCentralUnit().getHeadFrontLights()[i].isOn());
         }
         flf.getCabin().getSeats()[1].getOperator().pressSwitch(SwitchType.headLightsFront);
